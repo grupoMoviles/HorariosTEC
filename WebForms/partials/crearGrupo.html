@@ -1,0 +1,142 @@
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Horarios</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/crearCurso">Crear Curso</a></li>
+            <li  class="active"><a href="/crearGrupo">Crar Grupo</a></li>
+            <li><a href="/crearProfe">Crear Profesor</a></li>
+            <li><a href="/crearUsuario">Crear Usuario</a></li>
+            <li><a href="/editarCurso">Editar Curso</a></li>
+            <li><a href="/editarGrupo">Editar Grupo</a></li>
+            <li><a href="/editarProfe">Editar Profesor</a></li>
+            <li><a href="/editarUsuario">Editar Usuario</a></li>
+            <li><a href="/borrar">Borrar</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+        
+
+    <!-- aqui van los datos-->
+    <div class="jumbotron" style="margin:60px; border-style:solid; border-color:#58d3f7">
+      <center><h2><b>Registro de Grupo</center></b></h2>
+      <center><table>
+        <tr>
+        <td>
+          <table class="table table-hover" border="0">
+          <br>
+          <tr>
+            <td></td>
+            <td>Curso:</td>
+              <td><select name="cursos">
+                </select>
+              </td>  
+          </tr>
+          <tr>
+            <td></td>
+            <td>Número:</td>  
+            <td><input type="text" class="span2" ng-model="numero" maxlength="200" size="50"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Profesor</td>  
+            <td><select name="profes">
+                </select></td>
+          </tr>
+            <tr>
+            <td></td>
+            <td>Aula:</td>  
+            <td><input type="text" class="span2" ng-model="aula" maxlength="200" size="50"></td>
+          </tr>
+        </tr>
+
+                  
+        </table>
+        </td>
+        </tr>   
+        
+
+        
+        <tr>
+        <td>
+          <table class="table table-hover" border="0">
+                    <tr><center>Horario</center></tr>
+          <br>
+          <tr>
+            <td>Día:</td>
+              <td><select name="dias">
+                  <option value="lunes">Lunes</option>
+                  <option value="martes">Martes</option>
+                  <option value="miercoles">Miércoles</option>
+                  <option value="jueves">Jueves</option>
+                  <option value="viernes">Viernes</option>
+                  <option value="sabado">Sabado</option>
+                  
+                </select>
+              </td>  
+          </tr>
+          <tr>
+            <td>Hora Inicio:</td>  
+            <td><select name="horasI">
+                    <option value="1">1</option>
+                </select>
+                <select name="horasImin">
+                    <option value="20">20</option>
+                </select>
+                <select name="horasIdt">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                </select>
+              </td>
+          </tr>
+        <tr>
+            <td>Hora Final:</td>  
+            <td><select name="horasF">
+                    <option value="1">1</option>
+                </select>
+            <select name="horasFmin">
+                    <option value="20">20</option>
+                </select>
+                <select name="horasFdt">
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                </select>
+              </td>
+                <td>
+                <a href="" ng-click="registro()" class="btn btn-success">Agregar Horario<span class="glyphicon glyphicon-ok-sign"/>                 </a>
+            
+            </td>
+          </tr>
+        
+        </tr>
+        
+      </table></center>
+        
+    <center><table>
+    
+    </table></center>
+      <center>
+        <a href="" ng-click="registro()" class="btn btn-success">Aceptar  <span class="glyphicon glyphicon-ok-sign"/></a>
+      </center>
+    </div>
+
+
+    <br><br>
+
+      <hr>
+
+    </div> <!-- /container -->        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>

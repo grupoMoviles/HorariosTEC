@@ -1,0 +1,45 @@
+<?php header("Access-Control-Allow-Origin: *") ?>
+<!DOCTYPE html>
+  <html lang="en" ng-app="BodyApp">
+    <head>
+        
+      <!-- CONFIGURACION INICIAL DE LA PAGINA WEB -->
+
+      <meta charset="utf-8">
+      <title>Guia de Horarios</title>
+        
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <style>
+        body {
+          padding-top: 50px;
+          padding-bottom: 20px;
+        }
+      </style>
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="css/main.css">   
+        <link href="starter-template.css" rel="stylesheet">
+      <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+      <script src="js/controller.js"></script> 
+
+    </head>
+    <body>
+  
+      <!-- SE CARGARAN LOS DIFERENTES HTML -->
+      <div ng-view>
+      </div>
+    
+      <!-- SCRIPTS QUE REQUIERE LA PAGINA WEB -->  
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+      <script src="js/vendor/bootstrap.min.js"></script>
+      <script>
+        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src='//www.google-analytics.com/ga.js'
+        s.parentNode.insertBefore(g,s)}(document,'script'));
+      </script>
+    
+  </body>
+</html>

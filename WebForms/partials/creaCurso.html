@@ -1,0 +1,82 @@
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Horarios</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li  class="active"><a href="/crearCurso">Crear Curso</a></li>
+            <li><a href="/crearGrupo">Crar Grupo</a></li>
+            <li><a href="/crearProfe">Crear Profesor</a></li>
+            <li><a href="/crearUsuario">Crear Usuario</a></li>
+            <li><a href="/editarCurso">Editar Curso</a></li>
+            <li><a href="/editarGrupo">Editar Grupo</a></li>
+            <li><a href="/editarProfe">Editar Profesor</a></li>
+            <li><a href="/editarUsuario">Editar Usuario</a></li>
+            <li><a href="/borrar">Borrar</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+        
+
+    <!-- aqui van los datos-->
+    <div class="jumbotron" style="margin:60px; border-style:solid; border-color:#58d3f7">
+      <center><h2><b>Registro de Curso</center></b></h1>
+      <center><table>
+        <tr>
+        <td>
+          <table class="table table-hover" border="0">
+          <br>
+          <tr>
+            <td></td>
+            <td>Nombre:</td>  
+            <td><input type="text" class="span2" ng-model="nombre" maxlength="200" size="50"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Créditos:</td>  
+            <td><input type="text" class="span2" ng-model="creditos" maxlength="200" size="50"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>Escuela:</td>  
+            <td><input type="text" class="span2" ng-model="escuela" maxlength="200" size="50"></td>
+          </tr>
+                  
+        </table>
+        </td>
+        </tr>
+      </table></center>
+      <center>
+        <a href="" ng-click="registro()" class="btn btn-success">Aceptar  <span class="glyphicon glyphicon-ok-sign"/></a>
+      </center>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row"/>
+    </div>
+
+    <br><br>
+
+      <hr>
+
+    </div> <!-- /container -->        
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+        
+        
+        
+        
+        
+        

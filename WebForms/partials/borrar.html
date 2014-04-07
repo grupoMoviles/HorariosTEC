@@ -40,12 +40,9 @@
             <td></td>
             <td>Seleccionar Tipo de Dato</td>
               <td>
-                  <select name="tipos">
-                          <option value="curso">Curso</option>
-                          <option value="grupo">Grupo</option>
-                          <option value="profe">Profesor</option>
-                          <option value="usuario">Usuario</option>
-                </select>
+                  <select id="slTipos" class="input-medium">
+                     <option ng-repeat="tipo in tipos">{{tipo.nombre}}</option>
+                  </select>
               </td> 
               <td>
                   <a href="" ng-click="registro()" class="btn btn-success">Seleccionar <span class="glyphicon glyphicon-ok-sign"/></a>
@@ -79,6 +76,3 @@
       <hr>
 
     </div> <!-- /container -->        
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>

@@ -12,15 +12,17 @@ var loggedEmail = '';
 // Configuracion inicial de la aplicacion que controlara la pagina web.
 app.config(function($locationProvider,$routeProvider){
 	$locationProvider.html5Mode(true);
-	$routeProvider.when('/',{controller:"offlineCtrl" , templateUrl:"/partials/creaCurso.html"});
-    $routeProvider.when('/crearGrupo',{controller:"offlineCtrl" , templateUrl:"/partials/crearGrupo.html"});
-    $routeProvider.when('/crearProfe',{controller:"offlineCtrl" , templateUrl:"/partials/creaProfe.html"});
-    $routeProvider.when('/crearUsuario',{controller:"offlineCtrl" , templateUrl:"/partials/creaUsuario.html"});
-    $routeProvider.when('/editarCurso',{controller:"offlineCtrl" , templateUrl:"/partials/editarCurso.html"});
-    $routeProvider.when('/editarGrupo',{controller:"offlineCtrl" , templateUrl:"/partials/editarGrupo.html"});
-    $routeProvider.when('/editarProfe',{controller:"offlineCtrl" , templateUrl:"/partials/editarProfe.html"});
-    $routeProvider.when('/editarUsuario',{controller:"offlineCtrl" , templateUrl:"/partials/editarUsuario.html"});
-    $routeProvider.when('/borrar',{controller:"offlineCtrl" , templateUrl:"/partials/borrar.html"});
+	$routeProvider.when('/',{controller:"crearCursoCtrl" , templateUrl:"/partials/creaCurso.html"});
+    $routeProvider.when('/crearCurso',{controller:"crearCursoCtrl" , templateUrl:"/partials/creaCurso.html"});
+    $routeProvider.when('/crearGrupo',{controller:"crearGrupoCtrl" , templateUrl:"/partials/crearGrupo.html"});
+    $routeProvider.when('/crearProfe',{controller:"crearProfeCtrl" , templateUrl:"/partials/creaProfe.html"});
+    $routeProvider.when('/crearUsuario',{controller:"crearUsuarioCtrl" , templateUrl:"/partials/creaUsuario.html"});
+    
+    $routeProvider.when('/editarCurso',{controller:"editarCursoCtrl" , templateUrl:"/partials/editarCurso.html"});
+    $routeProvider.when('/editarGrupo',{controller:"crearGrupoCtrl" , templateUrl:"/partials/editarGrupo.html"});
+    $routeProvider.when('/editarProfe',{controller:"editarProfeCtrl" , templateUrl:"/partials/editarProfe.html"});
+    $routeProvider.when('/editarUsuario',{controller:"editarUsuarioCtrl" , templateUrl:"/partials/editarUsuario.html"});
+    $routeProvider.when('/borrar',{controller:"borrarCtrl" , templateUrl:"/partials/borrar.html"});
     $routeProvider.otherwise({redirectTo:'/'});
 });
 
@@ -33,200 +35,13 @@ app.config(['$httpProvider',function($httpProvider){
 
 // CONTROLADORES DE LAS DIFERENTES VISTAS.
 
-
-// Controlador de cuando el usuario escogera el equipo para competir.
-function competeCtrl($scope,$http,$templateCache,$location)
+//controlador de crear curso
+function crearCursoCtrl($scope,$http,$templateCache,$location,$window)
 {
-
-	$scope.logged = pass;
-	$scope.loggedName = loggedName;
-	$scope.loggedLastName = loggedLastName;
-
-	// Funcion que cierra la actual sesion.
-	$scope.cerrarSesion = function()
-	{
-		$location.path('/');
-	}
-
-
-	// Funcion que nos lleva a la pagina para crear equipo.
-	$scope.creacion = function()
-	{
-		$location.path('/createam');
-	}
-
-
-	// Funcion que busca los equipos a los cuales forma parte el usuario logueado.
-	$scope.findTeams = function()
-	{
-		var url = 'http://localhost:1212/viewteams/';
-		var method = 'POST';
-		var formData = {
-
-			"email": loggedEmail
-		};
-		var jdata = JSON.stringify(formData);
-
-		$http({
-			method: method, 
-			url: url, 
-			data: jdata,
-			header:{'Content-Type':'application/x-www-form-urlencoded'},
-			cache: $templateCache
-		}).
-		success(function(data,status)
-		{
-			$scope.teams = data ;
-		}).
-		error(function(data,status)
-		{
-			$scope.teams = data || "Request Failed";
-		});
-	};
-
-
-	$scope.findTeams();
-
-}
-
-// Controlador del main page cuando NO se haya iniciado sesion.
-function offlineCtrl($scope,$http,$templateCache,$location,$window)
-{
-
-	// Funcion que obtiene las ultimas carreras para mostrarlas.
-	$scope.getLastRaces = function()
-	{	
-		var url = 'http://localhost:1212/lastRaces/';
-		var method = 'POST';
-
-		$http({
-			method: method, 
-			url: url, 
-			cache: $templateCache
-		}).
-		success(function(data,status)
-		{
-			$scope.carreras = data;
-		}).
-		error(function(data,status)
-		{
-			$scope.carreras = data || "Request Failed";
-		});
-	}
-
-
-	// Funcion que inicia sesion.
-	$scope.login = function()
-	{
-		var url = 'http://localhost:1212/jugador/';
-		var pass = hex_md5($scope.correo + $scope.password);
-		var method = 'POST';
-		var formData = {
-
-			"pass": pass 
-		};
-		var jdata = JSON.stringify(formData);
-
-		$http({
-			method: method, 
-			url: url, 
-			data: jdata,
-			header:{'Content-Type':'application/x-www-form-urlencoded'},
-			cache: $templateCache
-		}).
-		success(function(data,status)
-		{
-			$scope.usuarios = data;
-			if($scope.usuarios.length > 0)
-			{
-				pass = $scope.usuarios[0].password;
-				loggedName = $scope.usuarios[0].nombre;
-				loggedLastName = $scope.usuarios[0].apellido1;
-				loggedEmail = $scope.usuarios[0].email;
-				$location.path('/main');
-			}
-			else
-			{
-				($window.mockWindow || $window).alert("ERROR: El usuario no esta registrado en el sistema.");
-				$scope.correo = '';
-				$scope.password = '';
-			}
-		}).
-		error(function(data,status)
-		{
-			$scope.usuarios = data || "Request Failed";
-		});
-	};
-
-
-	$scope.getLastRaces();
-
-}
-
-
-// Controlador cuando el usuario haya iniciado sesion.
-function onlineCtrl($scope,$http,$templateCache,$location)
-{
-
-	$scope.logged = pass;
-	$scope.loggedName = loggedName;
-	$scope.loggedLastName = loggedLastName;
-	$scope.loggedEmail = loggedEmail;
-
-	$scope.cerrarSesion = function()
-	{
-		$location.path('/');
-	};
-
-
-	$scope.competir = function()
-	{
-		$location.path('/compete');
-	};
-
-
-	$scope.obtenerCorreos = function()
-	{
-		var url = 'http://localhost:1212/seemails/';
-		var method = 'POST';
-		var formData = {
-
-			"email": $scope.loggedEmail 
-		};
-		var jdata = JSON.stringify(formData);
-
-		$http({
-			method: method, 
-			url: url, 
-			data: jdata,
-			header:{'Content-Type':'application/x-www-form-urlencoded'},
-			cache: $templateCache
-		}).
-		success(function(data,status)
-		{
-			$scope.destinos = data.correos;
-		}).
-		error(function(data,status)
-		{
-			$scope.destinos = data || "Request Failed";
-		});
-	};
-
-
-	$scope.obtenerCorreos();
-
-}
-
-
-// Controlador de la pagina de registro.
-function registerCtrl($scope,$http,$templateCache,$location,$window)
-{
-
-	// Funcion que registra a un jugador en la base de datos.
 	$scope.registro = function()
 	{
 
-		if($scope.username == null || $scope.lastname1 == null || $scope.lastname2 == null || $scope.email == null || $scope.password == null)
+		if($scope.nombre == null || $scope.creditos== null || $scope.escuela == null)
 		{
 			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
 		}
@@ -234,12 +49,9 @@ function registerCtrl($scope,$http,$templateCache,$location,$window)
 			var post = 'POST';
 			var urlReg = 'http://localhost:1212/addplayer';
 			var formData = {
-				"nombre": $scope.username,
-				"apellido1": $scope.lastname1,
-				"apellido2": $scope.lastname2,
-				"email": $scope.email,
-				"password": hex_md5($scope.email + $scope.password),
-				"pais": "Costa Rica",
+				"nombre": $scope.nombre,
+				"creditos": $scope.creditos,
+				"escuela": $scope.escuela,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -258,102 +70,35 @@ function registerCtrl($scope,$http,$templateCache,$location,$window)
 				loggedName = $scope.newUser.nombre;
 				loggedLastName = $scope.newUser.apellido1;
 				loggedEmail = $scope.newUser.email;
-				($window.mockWindow || $window).alert("EXITO: El jugador ha sido registrado en BIG RACE. Ahora puedes competir.");
+				($window.mockWindow || $window).alert("EXITO");
 				$location.path('/main');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
-				($window.mockWindow || $window).alert("ERROR: El correo electronico ya esta registrado en el sistema.");
+				($window.mockWindow || $window).alert("ERROR");
 				$location.path('/');
 			});
 		}
 	};
-
-
-	// Funcion que inicia sesion.
-	$scope.login = function()
-	{
-		var urlLogin = 'http://localhost:1212/jugador/';
-		var pass = hex_md5($scope.correo + $scope.contrasena);
-		var post = 'POST';
-		var formData = {
-
-			"pass": pass 
-		};
-		var jdata = JSON.stringify(formData);
-
-		$http({
-			method: post, 
-			url: urlLogin,
-			data: jdata,
-			header:{'Content-Type':'application/x-www-form-urlencoded'}, 
-			cache: $templateCache
-		}).
-		success(function(data,status)
-		{
-			$scope.usuarios = data;	
-			if($scope.usuarios.length > 0)
-			{
-				pass = $scope.usuarios[0].password;
-				loggedName = $scope.usuarios[0].nombre;
-				loggedLastName = $scope.usuarios[0].apellido1;
-				$location.path('/main');
-			}
-			else
-			{
-				($window.mockWindow || $window).alert("ERROR: El usuario no esta registrado en el sistema.");
-				$scope.correo = '';
-				$scope.password = '';
-			}
-		}).
-		error(function(data,status)
-		{
-			$scope.usuarios = data || "Request Failed";
-		});
-	};
-
 }
 
-
-
-// Controlador de la pagina donde se crea un equipo.
-function teamCtrl($scope,$http,$templateCache,$location,$window)
+//controlador de crear profesor 
+function crearProfeCtrl($scope,$http,$templateCache,$location,$window)
 {
-
-	$scope.logged = pass;
-	$scope.loggedName = loggedName;
-	$scope.loggedLastName = loggedLastName;
-	$scope.loggedEmail = loggedEmail;
-
-	// Funcion que cierra la actual sesion.
-	$scope.cerrarSesion = function()
-	{
-		$location.path('/');
-	}
-
-
-	$scope.competir = function()
-	{
-		$location.path('/compete');
-	}
-
-
-	// Funcion que registra a un jugador en la base de datos.
-	$scope.createTeam = function()
+	$scope.registro = function()
 	{
 
-		if($scope.teamname == null || $scope.logourl == null)
+		if($scope.nombre == null || $scope.apellidos== null)
 		{
-			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder terminar la creacion.");
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/createam';
+			var urlReg = 'http://localhost:1212/addplayer';
 			var formData = {
-				"nombre": $scope.teamname,
-				"logo": $scope.logourl,
-				"email": $scope.loggedEmail
+				"nombre": $scope.nombre,
+				"apellidos": $scope.apellidos,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -367,19 +112,396 @@ function teamCtrl($scope,$http,$templateCache,$location,$window)
 			}).
 			success(function(response)
 			{
-				$scope.newTeam = response;
-				($window.mockWindow || $window).alert("EXITO: El equipo esta listo para unirse a las carreras.");
-				$location.path('/compete');
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
-				($window.mockWindow || $window).alert("ERROR: El nombre del equipo ya existe en el sistema.");
-				$location.path('/createam');
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
 			});
 		}
 	};
-
 }
 
+//controlador de crear grupo
+function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
+{
+    //TODO: HACER EL GET DE LOS CURSOS
+    $scope.cursos = [{ "nombre": "Elementos de computacion" }, { "nombre": "Aplicaciones Moviles" }];
+    
+    //TODO: HAcer el GET DE LOS PROFES
+    $scope.profesores = [{ "nombre": "Carlos Benavides" }, { "nombre": "Rodrigo Nuñez" }];
+    
+    //LLENADO DE LAS HORAS y los dias
+    $scope.dias =[{"nombre": "Lunes"}, {"nombre": "Martes"}, {"nombre": "Miércoles"}, {"nombre": "Jueves"}, {"nombre": "Viernes"},
+                  {"nombre": "Sabado"}];
+    $scope.horas =[{"h": "7"},{"h": "8"},{"h": "9"},{"h": "10"},{"h": "11"},{"h": "12"},{"h": "13"},{"h": "14"},{"h": "15"},{"h": "16"},{"h": "17"},{"h": "18"},{"h": "19"},{"h": "20"},{"h": "21"}];
+    $scope.minutos=[{"m":"00"},{"m":"20"},{"m":"30"},{"m":"50"}];
+    
+    
+    $scope.registro = function()
+	{
+        
+        
+		if($scope.numero == null || $scope.aula== null)
+		{
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
+		}
+		else{
+			var post = 'POST';
+			var urlReg = 'http://localhost:1212/addplayer';
+			var formData = {
+				"numero": $scope.numero,
+				"aula": $scope.aula,
+			};
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(response)
+			{
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
+			}).
+			error(function(response)
+			{	
+				$scope.codeStatus = response || "Request failed";
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
+			});
+		}
+	};
+}
+
+//controlador de crear usuario
+
+function crearUsuarioCtrl($scope,$http,$templateCache,$location,$window)
+{
+	$scope.registro = function()
+	{
+
+		if($scope.correo == null || $scope.password== null)
+		{
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
+		}
+		else{
+			var post = 'POST';
+			var urlReg = 'http://localhost:1212/addplayer';
+			var formData = {
+				"correo": $scope.username,
+				"password": $scope.password,
+			};
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(response)
+			{
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
+			}).
+			error(function(response)
+			{	
+				$scope.codeStatus = response || "Request failed";
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
+			});
+		}
+	};
+}
+
+
+
+//controlador de editar curso
+function editarCursoCtrl($scope,$http,$templateCache,$location,$window)
+{
+    //TODO: HACER EL GET DE LOS CURSOS
+    $scope.cursos = [{ "nombre": "Elementos de computacion" }, { "nombre": "Aplicaciones Moviles" }];
+    
+    $scope.registro = function()
+	{
+        
+		if($scope.nombre == null || $scope.creditos== null || $scope.escuela == null)
+		{
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
+		}
+		else{
+			var post = 'POST';
+			var urlReg = 'http://localhost:1212/addplayer';
+			var formData = {
+				"nombre": $scope.nombre,
+				"creditos": $scope.creditos,
+				"escuela": $scope.escuela,
+			};
+
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(response)
+			{
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
+			}).
+			error(function(response)
+			{	
+				$scope.codeStatus = response || "Request failed";
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
+			});
+		}
+	};
+}
+
+
+//controlador de editar grupo
+function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
+{
+    //TODO: HACER EL GET DE LOS GRUPOS
+    $scope.grupos = [{ "numero":"2" }, { "numero":"3" }];
+    
+    //TODO: HACER EL GET DE LOS CURSOS
+    $scope.cursos = [{ "nombre": "Elementos de computacion" }, { "nombre": "Aplicaciones Moviles" }];
+    
+    //TODO: HAcer el GET DE LOS PROFES
+    $scope.profesores = [{ "nombre": "Carlos Benavides" }, { "nombre": "Rodrigo Nuñez" }];
+    
+    //LLENADO DE LAS HORAS y los dias
+    $scope.dias =[{"nombre": "Lunes"}, {"nombre": "Martes"}, {"nombre": "Miércoles"}, {"nombre": "Jueves"}, {"nombre": "Viernes"},
+                  {"nombre": "Sabado"}];
+    $scope.horas =[{"h": "7"},{"h": "8"},{"h": "9"},{"h": "10"},{"h": "11"},{"h": "12"},{"h": "13"},{"h": "14"},{"h": "15"},{"h":       "16"},{"h": "17"},{"h": "18"},{"h": "19"},{"h": "20"},{"h": "21"}];
+    $scope.minutos=[{"m":"00"},{"m":"20"},{"m":"30"},{"m":"50"}];
+    
+    
+    $scope.registro = function()
+	{
+        
+		if($scope.numero == null || $scope.aula== null)
+		{
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
+		}
+		else{
+			var post = 'POST';
+			var urlReg = 'http://localhost:1212/addplayer';
+			var formData = {
+				"numero": $scope.numero,
+				"aula": $scope.aula,
+			};
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(response)
+			{
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
+			}).
+			error(function(response)
+			{	
+				$scope.codeStatus = response || "Request failed";
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
+			});
+		}
+	};
+}
+
+//controlador de editar profesor
+function editarProfeCtrl($scope,$http,$templateCache,$location,$window)
+{
+
+    //TODO: HAcer el GET DE LOS PROFES
+    $scope.profesores = [{ "nombre": "Carlos Benavides" }, { "nombre": "Rodrigo Nuñez" }];
+
+    $scope.registro = function()
+	{
+        
+		if($scope.nombre == null || $scope.apellidos== null)
+		{
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
+		}
+		else{
+			var post = 'POST';
+			var urlReg = 'http://localhost:1212/addplayer';
+			var formData = {
+				"nombre": $scope.numero,
+				"apellidos": $scope.aula,
+			};
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(response)
+			{
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
+			}).
+			error(function(response)
+			{	
+				$scope.codeStatus = response || "Request failed";
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
+			});
+		}
+	};
+}
+
+//controlador de editar Usuario
+function editarUsuarioCtrl($scope,$http,$templateCache,$location,$window)
+{
+
+    //TODO: HAcer el GET DE LOS USUARIOS
+    $scope.usuarios = [{ "username": "honCBC" }, { "username": "meerkat" }];
+
+    $scope.registro = function()
+	{
+        
+		if($scope.correo == null || $scope.password== null)
+		{
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
+		}
+		else{
+			var post = 'POST';
+			var urlReg = 'http://localhost:1212/addplayer';
+			var formData = {
+				"correo": $scope.username,
+				"password": $scope.password,
+			};
+
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(response)
+			{
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
+			}).
+			error(function(response)
+			{	
+				$scope.codeStatus = response || "Request failed";
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
+			});
+		}
+	};
+}
+
+//controller de borrar
+//controlador de editar Usuario
+function borrarCtrl($scope,$http,$templateCache,$location,$window)
+{
+
+    $scope.tipos = [{ "nombre": "Curso" }, { "nombre": "Grupo" }, { "nombre": "Profesor" },{ "nombre": "Usuario" }];
+
+    $scope.registro = function()
+	{
+
+			var post = 'POST';
+			var urlReg = 'http://localhost:1212/addplayer';
+			var formData = {
+				"numero": $scope.numero,
+				"aula": $scope.aula,
+			};
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(response)
+			{
+				$scope.newUser = response;
+				pass = $scope.newUser.password;
+				loggedName = $scope.newUser.nombre;
+				loggedLastName = $scope.newUser.apellido1;
+				loggedEmail = $scope.newUser.email;
+				($window.mockWindow || $window).alert("EXITO");
+				$location.path('/main');	
+			}).
+			error(function(response)
+			{	
+				$scope.codeStatus = response || "Request failed";
+				($window.mockWindow || $window).alert("ERROR");
+				$location.path('/');
+			});
+	};
+}
 

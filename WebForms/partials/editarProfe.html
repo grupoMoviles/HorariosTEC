@@ -36,6 +36,16 @@
         <td>
           <table class="table table-hover" border="0">
           <br>
+              
+            <tr>
+            <td></td>
+            <td>Profesor:</td>
+              <td>
+                  <select id="slProfesor" class="input-medium">
+                     <option ng-repeat="profesor in profesores">{{profesor.nombre}}</option>
+                  </select>
+              </td>  
+          </tr>
           <tr>
             <td></td>
             <td>Nombre</td>
@@ -67,6 +77,4 @@
 
     </div> <!-- /container -->        
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
         

@@ -31,16 +31,27 @@
     <!-- aqui van los datos-->
     <div class="jumbotron" style="margin:60px; border-style:solid; border-color:#58d3f7">
       <center><h2><b>Editar Grupo</center></b></h2>
-      <center><table>
+            <center><table>
         <tr>
         <td>
           <table class="table table-hover" border="0">
           <br>
+              <tr>
+            <td></td>
+            <td>Grupo:</td>
+              <td>
+                  <select id="slGrupo" class="input-medium">
+                     <option ng-repeat="grupo in grupos">{{grupo.numero}}</option>
+                  </select>
+              </td>  
+          </tr>
           <tr>
             <td></td>
             <td>Curso:</td>
-              <td><select name="cursos">
-                </select>
+              <td>
+                  <select id="slCurso" class="input-medium">
+                     <option ng-repeat="curso in cursos">{{curso.nombre}}</option>
+                  </select>
               </td>  
           </tr>
           <tr>
@@ -51,8 +62,9 @@
           <tr>
             <td></td>
             <td>Profesor</td>  
-            <td><select name="profes">
-                </select></td>
+            <td><select id="slProfe" class="input-medium">
+                     <option ng-repeat="profesor in profesores">{{profesor.nombre}}</option>
+                  </select>
           </tr>
             <tr>
             <td></td>
@@ -75,43 +87,31 @@
           <br>
           <tr>
             <td>Día:</td>
-              <td><select name="dias">
-                  <option value="lunes">Lunes</option>
-                  <option value="martes">Martes</option>
-                  <option value="miercoles">Miércoles</option>
-                  <option value="jueves">Jueves</option>
-                  <option value="viernes">Viernes</option>
-                  <option value="sabado">Sabado</option>
-                  
-                </select>
+              <td><select id="slDia" class="input-medium">
+                     <option ng-repeat="dia in dias">{{dia.nombre}}</option>
+                  </select>
               </td>  
           </tr>
           <tr>
             <td>Hora Inicio:</td>  
-            <td><select name="horasI">
-                    <option value="1">1</option>
-                </select>
-                <select name="horasImin">
-                    <option value="20">20</option>
-                </select>
-                <select name="horasIdt">
-                    <option value="am">AM</option>
-                    <option value="pm">PM</option>
-                </select>
+            <td><select id="slHoraI" class="input-medium">
+                     <option ng-repeat="hora in horas">{{hora.h}}</option>
+                  </select>
+                <select id="slMinI" class="input-medium">
+                     <option ng-repeat="minuto in minutos">{{minuto.m}}</option>
+                  </select>
+
               </td>
           </tr>
         <tr>
             <td>Hora Final:</td>  
-            <td><select name="horasF">
-                    <option value="1">1</option>
-                </select>
-            <select name="horasFmin">
-                    <option value="20">20</option>
-                </select>
-                <select name="horasFdt">
-                    <option value="am">AM</option>
-                    <option value="pm">PM</option>
-                </select>
+            <td><select id="slHoraF" class="input-medium">
+                     <option ng-repeat="hora in horas">{{hora.h}}</option>
+                  </select>
+            <select id="slMinF" class="input-medium">
+                     <option ng-repeat="minuto in minutos">{{minuto.m}}</option>
+                  </select>
+
               </td>
                 <td>
                 <a href="" ng-click="registro()" class="btn btn-success">Agregar Horario<span class="glyphicon glyphicon-ok-sign"/>                 </a>
@@ -136,7 +136,4 @@
 
       <hr>
 
-    </div> <!-- /container -->        
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    </div> <!-- /container -->    

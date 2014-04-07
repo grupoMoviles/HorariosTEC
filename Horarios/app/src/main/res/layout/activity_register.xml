@@ -1,0 +1,100 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.proyecto1.app.RegisterActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_color" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal|top">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Registro"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:hint="Nombre"
+                android:id="@+id/E_Name"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="54dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Apellido"
+                android:ems="10"
+                android:id="@+id/E_LastName"
+                android:layout_below="@+id/E_Name"
+                android:layout_alignLeft="@+id/E_Name"
+                android:layout_alignStart="@+id/E_Name"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:hint="Correo"
+                android:ems="10"
+                android:layout_below="@+id/E_LastName"
+                android:id="@+id/E_Email"
+                android:layout_marginTop="20dp"
+                android:layout_alignLeft="@+id/E_LastName"
+                android:layout_alignStart="@+id/E_LastName" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Contrasena"
+                android:ems="10"
+                android:layout_below="@+id/E_Email"
+                android:id="@+id/E_Password"
+                android:layout_marginTop="20dp"
+                android:layout_alignLeft="@+id/E_Email"
+                android:layout_alignStart="@+id/E_Email" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Repetir Contrasena"
+                android:ems="10"
+                android:layout_below="@+id/E_Password"
+                android:id="@+id/E_PasswordRepeat"
+                android:layout_marginTop="20dp"
+                android:layout_alignLeft="@+id/E_Password"
+                android:layout_alignStart="@+id/E_Password" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Completar"
+                android:id="@+id/button"
+                android:layout_below="@+id/E_PasswordRepeat"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="58dp" />
+
+        </RelativeLayout>
+        </LinearLayout>
+
+    </FrameLayout>

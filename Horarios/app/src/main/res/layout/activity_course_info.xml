@@ -1,0 +1,129 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.proyecto1.app.CourseInfoActivity"
+    tools:ignore="MergeRootFrame"
+    android:background="@color/back_color" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/back_color"
+        android:layout_gravity="right|bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Nombre Grupo"
+            android:id="@+id/TV_Info_CourseName"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/purple_titles" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Información"
+            android:id="@+id/textView2"
+            android:layout_marginTop="60dp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_below="@+id/TV_Info_GroupName"
+            android:layout_alignRight="@+id/TV_InfoGroup"
+            android:layout_alignEnd="@+id/TV_InfoGroup"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="#000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Grupo:  "
+            android:id="@+id/textView"
+            android:layout_marginTop="66dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Codigo:  "
+            android:id="@+id/textView3"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Calificación del Profesor:  "
+            android:id="@+id/textView4"
+            android:layout_below="@+id/textView3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Aula:  "
+            android:layout_marginTop="20dp"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Grupo"
+            android:layout_marginLeft="-10dp"
+            android:id="@+id/TV_InfoGroup"
+            android:layout_alignTop="@+id/textView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_toRightOf="@+id/textView3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Profesor"
+            android:id="@+id/TV_InfoProfesor"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_toRightOf="@+id/textView3"
+            android:layout_alignRight="@+id/TV_InfoGroup"
+            android:layout_alignEnd="@+id/TV_InfoGroup" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="0"
+            android:id="@+id/TV_InfoCalProf"
+            android:layout_above="@+id/textView5"
+            android:layout_toRightOf="@+id/textView4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Aula"
+            android:id="@+id/TV_InfoAula"
+            android:layout_toRightOf="@+id/textView5"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_alignRight="@+id/TV_InfoProfesor"
+            android:layout_alignEnd="@+id/TV_InfoProfesor" />
+
+    </RelativeLayout>
+</FrameLayout>

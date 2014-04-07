@@ -1,0 +1,52 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.proyecto1.app.CourseSelActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_color" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:background="@color/back_color"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal|top">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirmar"
+                android:onClick="switchMenu"
+                android:id="@+id/button"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Selección de Cursos"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#FFFFFF"/>
+
+
+            <ExpandableListView
+                android:id="@+id/ExpListCourse"
+                android:layout_gravity="top"
+                android:background="#C1DAD6"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:layout_below="@+id/textView"
+                android:layout_above="@id/button"
+                />
+
+        </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>

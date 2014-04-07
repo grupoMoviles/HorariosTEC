@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.proyecto1.app" >
+
+    <uses-sdk android:minSdkVersion="3" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="Guia de Horarios"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.proyecto1.app.MainActivity"
+            android:label="Guia de Horarios" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.proyecto1.app.RegisterActivity"
+            android:label="Guia de Horarios"
+            android:parentActivityName="com.proyecto1.app.MainActivity" >
+        </activity>
+        <activity
+            android:name="com.proyecto1.app.CourseSelActivity"
+            android:label="Guia de Horarios"
+            android:parentActivityName="com.proyecto1.app.MainActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.proyecto1.app.MenuActivity"
+            android:label="Menu Principal"
+            android:parentActivityName="com.proyecto1.app.CourseSelActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.proyecto1.app.CourseInfoActivity"
+            android:label="Informacion de Curso"
+            android:parentActivityName="com.proyecto1.app.MenuActivity" >
+        </activity>
+        <activity
+            android:name="com.proyecto1.app.ScheduleActivity"
+            android:label="Seleccion Horario"
+            android:parentActivityName="com.proyecto1.app.MenuActivity" >
+        </activity>
+    </application>
+
+</manifest>

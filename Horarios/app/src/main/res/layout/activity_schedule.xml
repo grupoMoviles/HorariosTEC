@@ -1,0 +1,42 @@
+<com.proyecto1.app.CourseMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.proyecto1.app.InspeccionActivity"
+    tools:ignore="MergeRootFrame"
+    android:background="#0A4958" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#01B6AD"
+        android:orientation="vertical" >
+
+      <ListView
+          android:id="@+id/LV_Sched"
+          android:background="#C1DAD6"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent">
+
+      </ListView>
+     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="right|bottom">
+
+        <GridView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/gridView"
+            android:background="@drawable/schedule_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:numColumns="5"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+</com.proyecto1.app.CourseMenu>
+

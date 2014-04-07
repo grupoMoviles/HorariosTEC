@@ -45,16 +45,16 @@
                   </select>
               </td> 
               <td>
-                  <a href="" ng-click="registro()" class="btn btn-success">Seleccionar <span class="glyphicon glyphicon-ok-sign"/></a>
+                  <a href="" ng-click="seleccion()" class="btn btn-success">Seleccionar <span class="glyphicon glyphicon-ok-sign"/></a>
                 </td>
           </tr>
           <tr>
             <td></td>
             <td></td>  
             <td>
-                <select name="dato">
-                    
-                </select>
+                <select id="slDato" class="input-medium">
+                     <option ng-repeat="dato in datos">{{dato.nombre}}</option>
+                  </select>
               </td>
           </tr>
         </tr>

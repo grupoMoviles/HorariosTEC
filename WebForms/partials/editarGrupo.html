@@ -41,23 +41,17 @@
             <td>Grupo:</td>
               <td>
                   <select id="slGrupo" class="input-medium">
+                     <option ng-repeat="grupo in grupos">{{grupo.curso}}</option>
+                  </select>
+                  <select id="slNum" class="input-medium">
                      <option ng-repeat="grupo in grupos">{{grupo.numero}}</option>
                   </select>
               </td>  
           </tr>
-          <tr>
+              <tr>
             <td></td>
-            <td>Curso:</td>
-              <td>
-                  <select id="slCurso" class="input-medium">
-                     <option ng-repeat="curso in cursos">{{curso.nombre}}</option>
-                  </select>
-              </td>  
-          </tr>
-          <tr>
-            <td></td>
-            <td>Número:</td>  
-            <td><input type="text" class="span2" ng-model="numero" maxlength="200" size="50"></td>
+            <td>Sede:</td>  
+            <td><input type="text" class="span2" ng-model="sede" maxlength="200" size="50"></td>
           </tr>
           <tr>
             <td></td>
@@ -66,60 +60,13 @@
                      <option ng-repeat="profesor in profesores">{{profesor.nombre}}</option>
                   </select>
           </tr>
-            <tr>
-            <td></td>
-            <td>Aula:</td>  
-            <td><input type="text" class="span2" ng-model="aula" maxlength="200" size="50"></td>
-          </tr>
+ 
         </tr>
 
                   
         </table>
         </td>
         </tr>   
-        
-
-        
-        <tr>
-        <td>
-          <table class="table table-hover" border="0">
-                    <tr><center>Horario</center></tr>
-          <br>
-          <tr>
-            <td>Día:</td>
-              <td><select id="slDia" class="input-medium">
-                     <option ng-repeat="dia in dias">{{dia.nombre}}</option>
-                  </select>
-              </td>  
-          </tr>
-          <tr>
-            <td>Hora Inicio:</td>  
-            <td><select id="slHoraI" class="input-medium">
-                     <option ng-repeat="hora in horas">{{hora.h}}</option>
-                  </select>
-                <select id="slMinI" class="input-medium">
-                     <option ng-repeat="minuto in minutos">{{minuto.m}}</option>
-                  </select>
-
-              </td>
-          </tr>
-        <tr>
-            <td>Hora Final:</td>  
-            <td><select id="slHoraF" class="input-medium">
-                     <option ng-repeat="hora in horas">{{hora.h}}</option>
-                  </select>
-            <select id="slMinF" class="input-medium">
-                     <option ng-repeat="minuto in minutos">{{minuto.m}}</option>
-                  </select>
-
-              </td>
-                <td>
-                <a href="" ng-click="registro()" class="btn btn-success">Agregar Horario<span class="glyphicon glyphicon-ok-sign"/>                 </a>
-            
-            </td>
-          </tr>
-        
-        </tr>
         
       </table></center>
         

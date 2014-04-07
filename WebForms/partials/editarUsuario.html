@@ -41,13 +41,14 @@
             <td>Usuario:</td>
               <td>
                   <select id="slUsuario" class="input-medium">
-                     <option ng-repeat="usuario in usuarios">{{usuario.username}}</option>
+                     <option ng-repeat="usuario in usuarios">{{usuario.correo}}</option>
                   </select>
               </td>  
           </tr>
-          <tr>
+          
+              <tr>
             <td></td>
-            <td>E-mail:</td>
+            <td>Nombre de Usuario:</td>
               <td><input type="text" class="span2" ng-model="username" maxlength="200" size="50">
               </td>  
           </tr>

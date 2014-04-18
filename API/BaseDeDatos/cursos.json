@@ -1,0 +1,583 @@
+{ "_id" : { "$oid" : "53421fa70364716d6086ff99" }, "codigo" : "IC1400", "creditos" : "2", "escuela" : "CA", "nombre" : "Computacion2" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ff9c" }, "nombre" : "INTRODUCCION A LA PROGRAMACION", "codigo" : "IC1802", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffa0" }, "nombre" : "TALLER DE PROGRAMACION", "codigo" : "IC1803", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffa4" }, "nombre" : "ESTRUCTURAS DE DATOS", "codigo" : "IC2001", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffa6" }, "nombre" : "PROGRAMACION ORIENTADA A OBJETOS", "codigo" : "IC2101", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffa8" }, "nombre" : "ANALISIS DE ALGORITMOS", "codigo" : "IC3002", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffab" }, "nombre" : "ARQUITECTURA DE COMPUTADORES", "codigo" : "IC3101", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffae" }, "nombre" : "BASES DE DATOS I", "codigo" : "IC4301", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffb1" }, "nombre" : "BASES DE DATOS II", "codigo" : "IC4302", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffb3" }, "nombre" : "LENGUAJES DE PROGRAMACION", "codigo" : "IC4700", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa70364716d6086ffb6" }, "nombre" : "REQUERIMIENTOS DE SOFTWARE", "codigo" : "IC5821", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fa90364716d6086ffb9" }, "nombre" : "INGLES BASICO", "codigo" : "CI0202", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fa90364716d6086ffbb" }, "nombre" : "INGLES I PARA COMPUTACION", "codigo" : "CI1311", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fa90364716d6086ffbe" }, "nombre" : "COMUNICACION TECNICA", "codigo" : "CI1403", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fa90364716d6086ffc1" }, "nombre" : "ARTES MUSICALES", "codigo" : "SE1105", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fa90364716d6086ffc5" }, "nombre" : "AJEDREZ", "codigo" : "SE1218", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fa90364716d6086ffc8" }, "nombre" : "AMBIENTE HUMANO", "codigo" : "CS2101", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fa90364716d6086ffcb" }, "nombre" : "SEMINARIO DE ESTUDIOS FILOSOFICOS HISTORICOS", "codigo" : "CS3401", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fab0364716d6086ffce" }, "nombre" : "MATEMATICA GENERAL", "codigo" : "MA0101", "creditos" : "2", "escuela" : "MA" }
+{ "_id" : { "$oid" : "53421fab0364716d6086ffd2" }, "nombre" : "MATEMATICA DISCRETA", "codigo" : "MA1403", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "53421fab0364716d6086ffd4" }, "nombre" : "CALCULO", "codigo" : "MA1404", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "53421fab0364716d6086ffd7" }, "nombre" : "ALGEBRA LINEAL PARA COMPUTACION", "codigo" : "MA2405", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "53421fae0364716d6086ffda" }, "nombre" : "HISTORIA DE LAS MATEMATICAS", "codigo" : "EM5001", "creditos" : "4", "escuela" : "EML" }
+{ "_id" : { "$oid" : "53421fae0364716d6086ffdd" }, "nombre" : "DIDACTICA DE LAS MATEMATICAS I", "codigo" : "EM5002", "creditos" : "4", "escuela" : "EML" }
+{ "_id" : { "$oid" : "53421fae0364716d6086ffe0" }, "nombre" : "TALLER I: ALGORITMOS Y PROGRAMACI�N", "codigo" : "EM5003", "creditos" : "4", "escuela" : "EML" }
+{ "_id" : { "$oid" : "53421fae0364716d6086ffe3" }, "nombre" : "INTRODUCCION AL ANALISIS FUNCIONAL", "codigo" : "EM5004", "creditos" : "4", "escuela" : "EML" }
+{ "_id" : { "$oid" : "53421faf0364716d6086ffe6" }, "nombre" : "AUTOMATISMO", "codigo" : "MI5411", "creditos" : "4", "escuela" : "MIL" }
+{ "_id" : { "$oid" : "53421faf0364716d6086ffe9" }, "nombre" : "AHORRO ENERGETICO", "codigo" : "MI6153", "creditos" : "4", "escuela" : "MIL" }
+{ "_id" : { "$oid" : "53421faf0364716d6086ffec" }, "nombre" : "NEUMATICA", "codigo" : "MI6252", "creditos" : "4", "escuela" : "MIL" }
+{ "_id" : { "$oid" : "53421faf0364716d6086ffef" }, "nombre" : "MANTENIMIENTO PREDICTIVO", "codigo" : "MI6351", "creditos" : "4", "escuela" : "MIL" }
+{ "_id" : { "$oid" : "53421fb10364716d6086fff2" }, "nombre" : "DISE�O DE EXPERIMENTOS PARA BIOTECNOLOGIA", "codigo" : "BL1101", "creditos" : "4", "escuela" : "IBL" }
+{ "_id" : { "$oid" : "53421fb10364716d6086fff5" }, "nombre" : "GESTION DE LA CALIDAD EN PROCESOS BIOTECNOLOGICOS", "codigo" : "BL1102", "creditos" : "4", "escuela" : "IBL" }
+{ "_id" : { "$oid" : "53421fb10364716d6086fff8" }, "nombre" : "INGENIERIA BIOQUIMICA", "codigo" : "BL1114", "creditos" : "4", "escuela" : "IBL" }
+{ "_id" : { "$oid" : "53421fb10364716d6086fffb" }, "nombre" : "ESTADISTICA AVANZADA PARA BIOTECNOLOGIA", "codigo" : "BL1125", "creditos" : "4", "escuela" : "IBL" }
+{ "_id" : { "$oid" : "53421fb50364716d6086fffe" }, "nombre" : "CONTABILIDAD I", "codigo" : "AE1122", "creditos" : "4", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870001" }, "nombre" : "TEORIA ADMINISTRATIVA I", "codigo" : "AE1217", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870004" }, "nombre" : "CONTABILIDAD III", "codigo" : "AE2124", "creditos" : "4", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870007" }, "nombre" : "MATEMATICA FINANCIERA", "codigo" : "AE2125", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d6087000a" }, "nombre" : "CONTABILIDAD DE COSTOS I", "codigo" : "AE2126", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d6087000d" }, "nombre" : "COMPORTAMIENTO ORGANIZACIONAL", "codigo" : "AE2219", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870010" }, "nombre" : "MACROECONOMIA", "codigo" : "AE2311", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870013" }, "nombre" : "ESTADISTICA II", "codigo" : "AE2506", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870016" }, "nombre" : "SISTEMAS DE INFORMACION PARA ADMINISTRACION", "codigo" : "AE2704", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870019" }, "nombre" : "ADMINISTRACION FINANCIERA II", "codigo" : "AE3128", "creditos" : "4", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d6087001c" }, "nombre" : "ADMINISTRACION DE RECURSOS HUMANOS I", "codigo" : "AE3222", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d6087001f" }, "nombre" : "MERCADOTECNIA II", "codigo" : "AE3413", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870022" }, "nombre" : "PRODUCTIVIDAD EMPRESARIAL", "codigo" : "AE3506", "creditos" : "3", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870024" }, "nombre" : "FORMULACION Y EVALUACION PROYECTOS", "codigo" : "AE4130", "creditos" : "4", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb50364716d60870027" }, "nombre" : "ESTRATEGIA EMPRESARIAL", "codigo" : "AE4226", "creditos" : "4", "escuela" : "AEN" }
+{ "_id" : { "$oid" : "53421fb80364716d6087002a" }, "nombre" : "TEORIA DE LAS ORGANIZACIONES Y SUS PROCESOS", "codigo" : "TI1100", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087002e" }, "nombre" : "INFORMACION CONTABLE I", "codigo" : "TI1101", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870033" }, "nombre" : "INTRODUCCION A LA PROGRAMACION", "codigo" : "TI1400", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870039" }, "nombre" : "TALLER DE PROGRAMACION", "codigo" : "TI1401", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087003e" }, "nombre" : "ALGORITMOS Y ESTRUCTURAS DE DATOS", "codigo" : "TI2402", "creditos" : "4", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870041" }, "nombre" : "COSTOS EN AMBIENTES INFORMATICOS", "codigo" : "TI3103", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870045" }, "nombre" : "LENGUAJES DE PROGRAMACION", "codigo" : "TI3404", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870048" }, "nombre" : "BASES DE DATOS", "codigo" : "TI3600", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087004a" }, "nombre" : "ADMINISTRACION DE PROYECTOS II", "codigo" : "TI3801", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087004e" }, "nombre" : "BASES DE DATOS AVANZADOS", "codigo" : "TI4601", "creditos" : "4", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870050" }, "nombre" : "GESTION Y TOMA DE DECISIONES FINANCIERAS", "codigo" : "TI5100", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870053" }, "nombre" : "COMPORTAMIENTO ORGANIZACIONAL Y GESTION DE CAMBIOS", "codigo" : "TI5300", "creditos" : "2", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870055" }, "nombre" : "DISE�O DE SOFTWARE", "codigo" : "TI5501", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870058" }, "nombre" : "INFRAESTRUCTURA TECNOLOGICA I", "codigo" : "TI5701", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087005a" }, "nombre" : "GESTION DE RECURSOS HUMANOS", "codigo" : "TI7102", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087005d" }, "nombre" : "ARQUITECTURA DE APLICACIONES", "codigo" : "TI7503", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870060" }, "nombre" : "MODELO DE TOMA DE DECISIONES", "codigo" : "TI7802", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870063" }, "nombre" : "NEGOCIOS ELECTRONICOS", "codigo" : "TI7901", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870065" }, "nombre" : "TRABAJO FINAL DE GRADUACION", "codigo" : "TI9000", "creditos" : "10", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870068" }, "nombre" : "ADMINISTRACION DE SERVICIOS DE TECNOLOGIAS DE INFORMACION II", "codigo" : "TI9004", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087006b" }, "nombre" : "ESPIRITU EMPRENDEDOR Y CREACION DE EMPRESAS", "codigo" : "TI9005", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d6087006e" }, "nombre" : "CONSULTORIA DE TECNOLOGIA DE INFORMACION", "codigo" : "TI9006", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870071" }, "nombre" : "PLANIFICACION Y ESTRATEGIAS DE TI", "codigo" : "TI9804", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fb80364716d60870074" }, "nombre" : "SISTEMAS DE INFORMACION EMPRESARIAL", "codigo" : "TI9905", "creditos" : "3", "escuela" : "ATI" }
+{ "_id" : { "$oid" : "53421fbd0364716d60870077" }, "nombre" : "ELEMENTOS DE COMPUTACION", "codigo" : "CA2125", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d6087008c" }, "nombre" : "ANALISIS Y DISE�O DE ALGORITMOS", "codigo" : "CA3125", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700b4" }, "nombre" : "ADMINISTRACION DE PROYECTOS", "codigo" : "IC4810", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700b7" }, "nombre" : "COMPILADORES E INTERPRETES", "codigo" : "IC5701", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700bd" }, "nombre" : "INTELIGENCIA ARTIFICIAL", "codigo" : "IC6200", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700c0" }, "nombre" : "INVESTIGACION DE OPERACIONES", "codigo" : "IC6400", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700c2" }, "nombre" : "PRINCIPIOS DE SISTEMAS OPERATIVOS", "codigo" : "IC6600", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700c7" }, "nombre" : "DISE�O DE SOFTWARE", "codigo" : "IC6821", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700cb" }, "nombre" : "SISTEMAS DE INFORMACION ADMINISTRATIVOS", "codigo" : "IC6830", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700cd" }, "nombre" : "REDES LOCALES", "codigo" : "IC7601", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700cf" }, "nombre" : "ADMINISTRACION DE LA FUNCION DE INFORMACION", "codigo" : "IC7811", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700d1" }, "nombre" : "PROYECTO", "codigo" : "IC7840", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700d4" }, "nombre" : "COMPUTACION Y SOCIEDAD", "codigo" : "IC7900", "creditos" : "2", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700d6" }, "nombre" : "COMPONENTES Y COMUNICACIONES EN INTERNET", "codigo" : "IC8003", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700d8" }, "nombre" : "SISTEMAS DE INFORMACION GEOGRAFICA", "codigo" : "IC8017", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700da" }, "nombre" : "DESARROLLO DE APLICACIONES PARA DISPOSITIVOS MOVILES", "codigo" : "IC8041", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700dc" }, "nombre" : "ATAQUE Y PROTECCION DE SISTEMAS INFORMATICOS", "codigo" : "IC8042", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700df" }, "nombre" : "TALLER DE MULTIMEDIOS EN LA EDUCACION", "codigo" : "IC9004", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fbd0364716d608700e2" }, "nombre" : "PROGRAMACION II", "codigo" : "IC9006", "creditos" : "4", "escuela" : "CA" }
+{ "_id" : { "$oid" : "53421fc30364716d608700e5" }, "nombre" : "CIRCUITOS ELECTRICOS EN CC Y CA", "codigo" : "MT2001", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d608700e9" }, "nombre" : "LABORATORIO DE CIRCUITOS CC Y CA", "codigo" : "MT2002", "creditos" : "1", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d608700f0" }, "nombre" : "ELECTRONICA ANALOGICA", "codigo" : "MT3001", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d608700f3" }, "nombre" : "LABORATORIO DE ELECTRONICA ANALOGICA", "codigo" : "MT3002", "creditos" : "1", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d608700f7" }, "nombre" : "MAQUINAS ELECTRICAS PARA MECATRONICA", "codigo" : "MT3003", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d608700f9" }, "nombre" : "LABORATORIO DE MAQUINAS ELECTRICAS PARA MECATRONICA", "codigo" : "MT3004", "creditos" : "1", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d608700fd" }, "nombre" : "ELECTRONICA DIGITAL", "codigo" : "MT4001", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d608700ff" }, "nombre" : "LABORATORIO ELECTRONICA DIGITAL", "codigo" : "MT4002", "creditos" : "1", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870103" }, "nombre" : "MODELOS DE SISTEMAS PARA MECATRONICA", "codigo" : "MT5001", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870106" }, "nombre" : "PROBABILIDAD Y PROCESOS ESTOCASTICOS", "codigo" : "MT6001", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870109" }, "nombre" : "TERMOFLUIDOS", "codigo" : "MT6002", "creditos" : "4", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d6087010b" }, "nombre" : "LABORATORIO DE TERMOFLUIDOS", "codigo" : "MT6003", "creditos" : "1", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d6087010f" }, "nombre" : "ANALISIS Y SIMULACION DE SISTEMAS", "codigo" : "MT7001", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870112" }, "nombre" : "SENSORES Y ACTUADORES", "codigo" : "MT7002", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870115" }, "nombre" : "MICROPROCESADORES Y MICROCONTROLADORES", "codigo" : "MT7003", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870117" }, "nombre" : "NEUMATICA Y OLEOHIDRAULICA", "codigo" : "MT7004", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d6087011a" }, "nombre" : "FORMULACION DE PROYECTOS", "codigo" : "MT7005", "creditos" : "2", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d6087011d" }, "nombre" : "TEORIA DE COMUNICACION Y PROCESAMIENTO DE SE�ALES", "codigo" : "MT8001", "creditos" : "3", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870120" }, "nombre" : "SISTEMAS DE MANUFACTURA", "codigo" : "MT8003", "creditos" : "4", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870123" }, "nombre" : "ROBOTICA", "codigo" : "MT8005", "creditos" : "4", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870126" }, "nombre" : "DISE�O DE SISTEMAS MECATRONICOS", "codigo" : "MT9001", "creditos" : "4", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc30364716d60870129" }, "nombre" : "MANTENIMIENTO DE SISTEMAS MECATRONICOS", "codigo" : "MT9002", "creditos" : "4", "escuela" : "IMT" }
+{ "_id" : { "$oid" : "53421fc50364716d6087012c" }, "nombre" : "INTRODUCCION A LA PROGRAMACION", "codigo" : "CE1101", "creditos" : "3", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870135" }, "nombre" : "TALLER DE PROGRAMACION", "codigo" : "CE1102", "creditos" : "2", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d6087013c" }, "nombre" : "ALGORITMOS Y ESTRUCTURAS DE DATOS I", "codigo" : "CE1103", "creditos" : "4", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870140" }, "nombre" : "ALGORITMOS Y ESTRUCTURAS DE DATOS II", "codigo" : "CE2103", "creditos" : "4", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870143" }, "nombre" : "LABORATORIO DE CIRCUITOS ELECTRICOS", "codigo" : "CE2201", "creditos" : "1", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870146" }, "nombre" : "LENGUAJES, COMPILADORES E INTERPRETES", "codigo" : "CE3104", "creditos" : "4", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870149" }, "nombre" : "ESPECIFICACION Y DISE�O DE SOFTWARE", "codigo" : "CE4101", "creditos" : "4", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d6087014c" }, "nombre" : "TALLER DE DISE�O ANALOGICO", "codigo" : "CE4202", "creditos" : "2", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d6087014f" }, "nombre" : "ARQUITECTURA DE COMPUTADORES I", "codigo" : "CE4301", "creditos" : "4", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870152" }, "nombre" : "REDES DE COMPUTADORES", "codigo" : "CE5301", "creditos" : "4", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870155" }, "nombre" : "PROYECTO DE DISE�O DE INGENIERIA EN COMPUTADORES", "codigo" : "CE5302", "creditos" : "3", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc50364716d60870158" }, "nombre" : "FORMULACION Y ADMINISTRACION DE PROYECTOS", "codigo" : "CE5401", "creditos" : "3", "escuela" : "IDC" }
+{ "_id" : { "$oid" : "53421fc70364716d6087015b" }, "nombre" : "INTRODUCCION A LA PEDAGOGIA", "codigo" : "EM1401", "creditos" : "3", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d6087015e" }, "nombre" : "TEORIAS PSICOPEDAGOGICAS DEL APRENDIZAJE", "codigo" : "EM1404", "creditos" : "3", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870161" }, "nombre" : "FUNDAMENTOS DE MATEMATICA I", "codigo" : "EM1603", "creditos" : "4", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870164" }, "nombre" : "FUNDAMENTOS DE MATEMATICA II", "codigo" : "EM1604", "creditos" : "4", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870167" }, "nombre" : "APRENDIZAJE Y DIDACTICA DE LA MATEMATICA", "codigo" : "EM2407", "creditos" : "3", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d6087016a" }, "nombre" : "GEOMETRIA I", "codigo" : "EM2604", "creditos" : "4", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d6087016d" }, "nombre" : "GEOMETRIA II", "codigo" : "EM2606", "creditos" : "4", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870170" }, "nombre" : "CALCULO Y ANALISIS II", "codigo" : "EM2607", "creditos" : "5", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870173" }, "nombre" : "NECESIDADES EDUCATIVAS ESPECIALES EN EL APRENDIZAJE DE LA MATEMATICA", "codigo" : "EM3047", "creditos" : "3", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870176" }, "nombre" : "PSICOLOGIA DEL DESARROLLO", "codigo" : "EM3407", "creditos" : "3", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870178" }, "nombre" : "EVALUACION DEL APRENDIZAJE", "codigo" : "EM3408", "creditos" : "3", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d6087017b" }, "nombre" : "PRACTICA DOCENTE", "codigo" : "EM3409", "creditos" : "6", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d6087017e" }, "nombre" : "ALGEBRA LINEAL", "codigo" : "EM3607", "creditos" : "5", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870181" }, "nombre" : "ALGEBRA", "codigo" : "EM4609", "creditos" : "5", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fc70364716d60870184" }, "nombre" : "ECUACIONES DIFERENCIALES", "codigo" : "EM4610", "creditos" : "5", "escuela" : "EM" }
+{ "_id" : { "$oid" : "53421fcc0364716d60870187" }, "nombre" : "CONTABILIDAD I", "codigo" : "AE1122", "creditos" : "4", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d6087018e" }, "nombre" : "TEORIA ADMINISTRATIVA I", "codigo" : "AE1217", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d60870196" }, "nombre" : "CONTABILIDAD III", "codigo" : "AE2124", "creditos" : "4", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d6087019e" }, "nombre" : "MATEMATICA FINANCIERA", "codigo" : "AE2125", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701a1" }, "nombre" : "COMPORTAMIENTO ORGANIZACIONAL", "codigo" : "AE2219", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701a8" }, "nombre" : "ANALISIS ADMINISTRATIVO", "codigo" : "AE2220", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701ac" }, "nombre" : "MICROECONOMIA", "codigo" : "AE2308", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701b5" }, "nombre" : "ESTADISTICA I", "codigo" : "AE2505", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701bb" }, "nombre" : "COMPUTACION PARA ADMINISTRACION", "codigo" : "AE2703", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701c0" }, "nombre" : "SISTEMAS DE INFORMACION PARA ADMINISTRACION", "codigo" : "AE2704", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701c3" }, "nombre" : "CONTABILIDAD GENERAL", "codigo" : "AE3103", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701c8" }, "nombre" : "ADMINISTRACION FINANCIERA I", "codigo" : "AE3127", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701cc" }, "nombre" : "ADMINISTRACION DE RECURSOS HUMANOS I", "codigo" : "AE3222", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701cf" }, "nombre" : "NEGOCIOS INTERNACIONALES", "codigo" : "AE3312", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701d5" }, "nombre" : "MERCADOTECNIA I", "codigo" : "AE3411", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701db" }, "nombre" : "METODOLOGIA DE LA INVESTIGACION", "codigo" : "AE3505", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701e0" }, "nombre" : "INGENIERIA ECONOMICA", "codigo" : "AE4121", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701e2" }, "nombre" : "AUDITORIA I", "codigo" : "AE4128", "creditos" : "2", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701e7" }, "nombre" : "FORMULACION Y EVALUACION PROYECTOS", "codigo" : "AE4130", "creditos" : "4", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701ea" }, "nombre" : "DESARROLLO DE EMPRENDEDORES", "codigo" : "AE4208", "creditos" : "4", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701f3" }, "nombre" : "ADMINISTRACION DE RECURSOS HUMANOS II", "codigo" : "AE4223", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701f8" }, "nombre" : "ESTRATEGIA EMPRESARIAL", "codigo" : "AE4226", "creditos" : "4", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701fc" }, "nombre" : "GERENCIA FORESTAL", "codigo" : "AE4230", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d608701ff" }, "nombre" : "MACROECONOMIA", "codigo" : "AE4312", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d60870201" }, "nombre" : "CONTABILIDAD Y FINANZAS", "codigo" : "AE5111", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcc0364716d60870205" }, "nombre" : "INGENIERIA ECONOMICA", "codigo" : "AE5121", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "53421fcd0364716d6087020a" }, "nombre" : "NUTRICION Y AGROSTOLOGIA", "codigo" : "AA3203", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d6087020d" }, "nombre" : "CONTROL DE CALIDAD DE PROC. AGROIND", "codigo" : "AA4113", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870210" }, "nombre" : "INTRODUCCION A LA INGENIERIA EN AGRONEGOCIOS", "codigo" : "AN1001", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870215" }, "nombre" : "ANALISIS ECONOMICO EN AGRONEGOCIOS", "codigo" : "AN2001", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870218" }, "nombre" : "AGRONEGOCIOS EN EL DESARROLLO RURAL", "codigo" : "AN2002", "creditos" : "2", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d6087021c" }, "nombre" : "MICROBIOLOGIA AGROALIMENTARIA", "codigo" : "AN3001", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d6087021e" }, "nombre" : "ESTADISTICA INFERENCIAL EN AGRONEGOCIOS", "codigo" : "AN3002", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870220" }, "nombre" : "GESTION CONTABLE EN AGRONEGOCIOS", "codigo" : "AN3003", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870223" }, "nombre" : "PROCESADO PRODUCTOS AGRICOLAS", "codigo" : "AN4001", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870226" }, "nombre" : "MERCADEO PRODUCTOS AGROINDUSTRIALES", "codigo" : "AN4002", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870229" }, "nombre" : "ABASTECIMIENTO DE LOS AGRONEGOCIOS", "codigo" : "AN4003", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d6087022c" }, "nombre" : "CULTIVOS PERENNES Y GRANOS", "codigo" : "AN4004", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d6087022e" }, "nombre" : "PRODUCCION PORCINA Y AVICOLA", "codigo" : "AN4010", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870231" }, "nombre" : "SEMINARIO DE GRADUACION EN AGRONEGOCIOS", "codigo" : "AN5001", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870233" }, "nombre" : "GESTION DE RECURSOS HUMANOS EN AGRONEGOCIOS", "codigo" : "AN5002", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870235" }, "nombre" : "FORMULACION Y EVALUACION DE PROYECTOS", "codigo" : "AN5003", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcd0364716d60870238" }, "nombre" : "ESTRATEGIA EMPRESARIAL EN AGRONEGOCIOS", "codigo" : "AN5004", "creditos" : "3", "escuela" : "AA" }
+{ "_id" : { "$oid" : "53421fcf0364716d6087023b" }, "nombre" : "BIOLOGIA GENERAL", "codigo" : "BI1101", "creditos" : "3", "escuela" : "BI" }
+{ "_id" : { "$oid" : "53421fcf0364716d60870243" }, "nombre" : "LABORATORIO DE BIOLOGIA GENERAL", "codigo" : "BI1102", "creditos" : "1", "escuela" : "BI" }
+{ "_id" : { "$oid" : "53421fcf0364716d60870253" }, "nombre" : "BIOLOGIA AGRICOLA", "codigo" : "BI1103", "creditos" : "3", "escuela" : "BI" }
+{ "_id" : { "$oid" : "53421fcf0364716d60870255" }, "nombre" : "LABORATORIO DE BIOLOGIA AGRICOLA", "codigo" : "BI1104", "creditos" : "1", "escuela" : "BI" }
+{ "_id" : { "$oid" : "53421fcf0364716d60870259" }, "nombre" : "SISTEMAS ECOLOGICOS", "codigo" : "BI2103", "creditos" : "3", "escuela" : "BI" }
+{ "_id" : { "$oid" : "53421fcf0364716d6087025b" }, "nombre" : "ECOLOGIA Y PROBLEMATICA AMBIENTAL", "codigo" : "BI3410", "creditos" : "3", "escuela" : "BI" }
+{ "_id" : { "$oid" : "53421fcf0364716d6087025d" }, "nombre" : "FUNDAMENTOS DE ECOLOGIA Y PROBLEMATICA AMBIENTAL", "codigo" : "BI3509", "creditos" : "3", "escuela" : "BI" }
+{ "_id" : { "$oid" : "53421fd20364716d60870260" }, "nombre" : "INTRODUCCION A LA CIENCIA E ING. DE MATERIALES", "codigo" : "CM1101", "creditos" : "2", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870263" }, "nombre" : "TERMODINAMICA", "codigo" : "CM2103", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870266" }, "nombre" : "MATERIALES I", "codigo" : "CM2201", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d6087026b" }, "nombre" : "TERMODINAMICA DE MATERIALES", "codigo" : "CM3103", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d6087026e" }, "nombre" : "CONTROL TECNOLOGICO I", "codigo" : "CM3104", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870271" }, "nombre" : "METALURGIA EXTRACTIVA", "codigo" : "CM3202", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870273" }, "nombre" : "LABORATORIO DE METALURGIA EXTRACTIVA", "codigo" : "CM3203", "creditos" : "1", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870275" }, "nombre" : "METODOS NUMERICOS PARA INGENIERIA", "codigo" : "CM3207", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870282" }, "nombre" : "MATERIALES III", "codigo" : "CM3401", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870284" }, "nombre" : "MATERIALES IV", "codigo" : "CM3402", "creditos" : "2", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870286" }, "nombre" : "MODELACION Y SIMULACION", "codigo" : "CM4101", "creditos" : "4", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870289" }, "nombre" : "FENOMENOS DE TRANSPORTE II", "codigo" : "CM4102", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d6087028c" }, "nombre" : "CONTROL TECNOLOGICO II", "codigo" : "CM4104", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d6087028e" }, "nombre" : "TRANSFERENCIA DE CALOR", "codigo" : "CM4108", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870291" }, "nombre" : "ANALISIS TERMICO Y DIFRACCION DE R-X", "codigo" : "CM4111", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870294" }, "nombre" : "TENCNOLOGIA Y DISE�O DE LA SOLDADURA", "codigo" : "CM4303", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d60870297" }, "nombre" : "LAB. TECNOLOGIA Y DISE�O DE SOLDADURA", "codigo" : "CM4304", "creditos" : "1", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d6087029a" }, "nombre" : "TECNOLOGIA DE POLIMEROS", "codigo" : "CM4305", "creditos" : "2", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d6087029c" }, "nombre" : "CONFORMADO DE MATERIALES", "codigo" : "CM4307", "creditos" : "4", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d6087029e" }, "nombre" : "TECNOLOGIA DE RECUBRIMIENTOS", "codigo" : "CM5102", "creditos" : "4", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702a1" }, "nombre" : "DISE�O DE MOLDES Y TROQUELES", "codigo" : "CM5104", "creditos" : "4", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702a3" }, "nombre" : "METALURGIA DE MANUFACTURA", "codigo" : "CM5106", "creditos" : "4", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702a5" }, "nombre" : "PROCESOS DE MATERIALES", "codigo" : "CM5107", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702a8" }, "nombre" : "TECNOLOGIA DE ALEACIONES DE METALICAS II", "codigo" : "CM5205", "creditos" : "4", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702aa" }, "nombre" : "EQUIPOS AUXILIARES DE PLANTA", "codigo" : "CM5302", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702ac" }, "nombre" : "CIENCIAS DE LOS MATERIALES", "codigo" : "ME2208", "creditos" : "3", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702b0" }, "nombre" : "TECNOLOGIA DE MATERIALES", "codigo" : "ME3208", "creditos" : "2", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd20364716d608702b3" }, "nombre" : "LABORAT DE TECNOLOGIA DE MATERIALES", "codigo" : "ME3209", "creditos" : "1", "escuela" : "ME" }
+{ "_id" : { "$oid" : "53421fd90364716d608702d1" }, "nombre" : "COMUNICACION ESCRITA", "codigo" : "CI1106", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d608702fe" }, "nombre" : "DESTREZAS COMUNICATIVAS DEL INGLES PARA BIOTECNOLOGIA I", "codigo" : "CI1108", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870300" }, "nombre" : "INGLES PARA BIOTECNOLOGIA II", "codigo" : "CI1203", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870302" }, "nombre" : "INGLES I", "codigo" : "CI1230", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870310" }, "nombre" : "INGLES II", "codigo" : "CI1231", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d6087031e" }, "nombre" : "INGLES I PARA ADMINISTRACION", "codigo" : "CI1305", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870322" }, "nombre" : "INGLES II PARA ADMINISTRACION", "codigo" : "CI1306", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870329" }, "nombre" : "INGLES III PARA COMPUTACION", "codigo" : "CI1313", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d6087032c" }, "nombre" : "COMUNICACION EDUCATIVA I", "codigo" : "CI1401", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870334" }, "nombre" : "INGLES PARA TURISMO SOSTENIBLE", "codigo" : "CI2202", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870336" }, "nombre" : "INGLES III PARA ADMINISTRACION", "codigo" : "CI2307", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870339" }, "nombre" : "INGLES ESPECIALIZADO PARA ELECTRONICA Y COMPUTACION", "codigo" : "CI3201", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d6087033b" }, "nombre" : "INGLES PARA MECATRONICA", "codigo" : "CI3202", "creditos" : "1", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d6087033d" }, "nombre" : "INGLES V PARA ADMINISTRACION", "codigo" : "CI3309", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d6087033f" }, "nombre" : "INGLES VI PARA ADMINISTRACION", "codigo" : "CI3310", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870341" }, "nombre" : "INGLES 1 (ATI)", "codigo" : "CI3400", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870343" }, "nombre" : "INGLES VII PARA ADMINISTRACION", "codigo" : "CI4312", "creditos" : "3", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fd90364716d60870346" }, "nombre" : "SEMINARIO DE INVESTIGACION", "codigo" : "CI5108", "creditos" : "2", "escuela" : "CI" }
+{ "_id" : { "$oid" : "53421fdd0364716d60870349" }, "nombre" : "ARTES DRAMATICAS", "codigo" : "SE1101", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d60870351" }, "nombre" : "ACCION SOCIAL", "codigo" : "SE1102", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d6087035a" }, "nombre" : "DANZA", "codigo" : "SE1103", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d60870360" }, "nombre" : "ARTES VISUALES", "codigo" : "SE1104", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d6087036e" }, "nombre" : "APRECIACION LITERARIA", "codigo" : "SE1106", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d60870372" }, "nombre" : "APRECIACION DE CINE", "codigo" : "SE1107", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d60870378" }, "nombre" : "ATLETISMO", "codigo" : "SE1201", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d6087037e" }, "nombre" : "NATACION", "codigo" : "SE1204", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d6087038d" }, "nombre" : "JUEGOS Y DEPORTES EN CONJUNTO", "codigo" : "SE1205", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d60870393" }, "nombre" : "ACONDICIONAMIENTO FISICO", "codigo" : "SE1206", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d6087039a" }, "nombre" : "BEISBOL-SOFTBOL", "codigo" : "SE1209", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d608703a4" }, "nombre" : "BALONCESTO RECREATIVO", "codigo" : "SE1219", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fdd0364716d608703a6" }, "nombre" : "FUTBOL I", "codigo" : "SE1221", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "53421fe30364716d608703ab" }, "nombre" : "DERECHO COMERCIAL", "codigo" : "CS1308", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d608703b2" }, "nombre" : "INTR. TEC. CIENCIA Y TECNOLOGIA", "codigo" : "CS1502", "creditos" : "1", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d608703ea" }, "nombre" : "RELACIONES LABORALES", "codigo" : "CS2303", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d608703f4" }, "nombre" : "DERECHO LABORAL", "codigo" : "CS2304", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d608703f7" }, "nombre" : "DERECHO AMBIENTAL Y BIOTECNOLOGICO", "codigo" : "CS3301", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d608703f9" }, "nombre" : "LEGISLACION AGRICOLA", "codigo" : "CS3305", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d6087040a" }, "nombre" : "SEMINARIO DE ETICA EN LA INGENIERIA", "codigo" : "CS3404", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d60870416" }, "nombre" : "DERECHO AMBIENTAL", "codigo" : "CS4107", "creditos" : "3", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe30364716d60870418" }, "nombre" : "SEMINARIO DE ESTUDIOS COSTARRICENSES", "codigo" : "CS4402", "creditos" : "2", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe40364716d6087042a" }, "nombre" : "LEGISLACION MERCANTIL,LABORAL Y TRIBUTARIA", "codigo" : "CS4404", "creditos" : "3", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe40364716d6087042d" }, "nombre" : "DESARROLLO TECNOLOGICO Y SOSTENIBILIDAD", "codigo" : "CS5300", "creditos" : "3", "escuela" : "CS" }
+{ "_id" : { "$oid" : "53421fe80364716d60870430" }, "nombre" : "FISICA GENERAL I", "codigo" : "FI1101", "creditos" : "3", "escuela" : "FI" }
+{ "_id" : { "$oid" : "53421fe80364716d6087044c" }, "nombre" : "FISICA GENERAL II", "codigo" : "FI1102", "creditos" : "3", "escuela" : "FI" }
+{ "_id" : { "$oid" : "53421fe80364716d60870458" }, "nombre" : "FISICA PARA BIOTECNOLOGIA", "codigo" : "FI1105", "creditos" : "3", "escuela" : "FI" }
+{ "_id" : { "$oid" : "53421fe80364716d6087045c" }, "nombre" : "LABORATORIO FISICA GENERAL I", "codigo" : "FI1201", "creditos" : "1", "escuela" : "FI" }
+{ "_id" : { "$oid" : "53421fe80364716d60870472" }, "nombre" : "LABORATORIO FISICA GENERAL II", "codigo" : "FI1202", "creditos" : "1", "escuela" : "FI" }
+{ "_id" : { "$oid" : "53421fe80364716d60870485" }, "nombre" : "FISICA GENERAL III", "codigo" : "FI2103", "creditos" : "3", "escuela" : "FI" }
+{ "_id" : { "$oid" : "53421fe80364716d6087048c" }, "nombre" : "FISICA GENERAL IV", "codigo" : "FI2104", "creditos" : "3", "escuela" : "FI" }
+{ "_id" : { "$oid" : "53421fee0364716d6087048f" }, "nombre" : "DIBUJO TECNICO", "codigo" : "MI2101", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704a6" }, "nombre" : "ESTATICA", "codigo" : "MI2106", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704ad" }, "nombre" : "LABORATORIO DE ELECTRICIDAD I", "codigo" : "MI2202", "creditos" : "1", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704b4" }, "nombre" : "LABORATORIO DE ELECTRICIDAD II", "codigo" : "MI2204", "creditos" : "1", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704b9" }, "nombre" : "ELECTRICIDAD I", "codigo" : "MI2205", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704bb" }, "nombre" : "ELECTRICIDAD II", "codigo" : "MI2207", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704bf" }, "nombre" : "PROCESOS DE MANUFACTURA", "codigo" : "MI3103", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704c4" }, "nombre" : "LAB. PROCESOS DE MANUFACTURA", "codigo" : "MI3104", "creditos" : "2", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704d3" }, "nombre" : "MECANICA DE FLUIDOS", "codigo" : "MI3108", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704d5" }, "nombre" : "LABORATORIO DE MECANICA DE FLUIDOS", "codigo" : "MI3111", "creditos" : "1", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704db" }, "nombre" : "RESISTENCIA DE MATERIALES", "codigo" : "MI3115", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704e0" }, "nombre" : "TURBO MAQUINAS", "codigo" : "MI3116", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704e3" }, "nombre" : "DINAMICA", "codigo" : "MI3117", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704e8" }, "nombre" : "LABORATORIO DE TURBOMAQUINAS", "codigo" : "MI3119", "creditos" : "1", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704eb" }, "nombre" : "DIBUJO INDUSTRIAL", "codigo" : "MI3124", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704ef" }, "nombre" : "TERMODINAMICA", "codigo" : "MI3130", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704f2" }, "nombre" : "MAQUINAS Y EQUIPOS", "codigo" : "MI3138", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704f6" }, "nombre" : "LABORATORIO DE MAQUINAS ELECTRICAS", "codigo" : "MI3206", "creditos" : "1", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704fa" }, "nombre" : "ELECTRICIDAD III", "codigo" : "MI3209", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704fc" }, "nombre" : "MAQUINAS ELECTRICAS", "codigo" : "MI3210", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d608704ff" }, "nombre" : "LABORATORIO DE SISTEMAS DE VAPOR", "codigo" : "MI4125", "creditos" : "1", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d60870505" }, "nombre" : "SISTEMAS DE VAPOR", "codigo" : "MI4128", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d60870507" }, "nombre" : "ELEMENTOS DE MAQUINAS", "codigo" : "MI4136", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d6087050b" }, "nombre" : "CONTROL ELECTRICO", "codigo" : "MI4209", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d6087050d" }, "nombre" : "LABORATORIO DE CONTROL ELECTRICO", "codigo" : "MI4210", "creditos" : "1", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d60870511" }, "nombre" : "INSTALACIONES ELECTRICAS", "codigo" : "MI4212", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d60870513" }, "nombre" : "ADMINISTRACION MANTENIMIENTO I", "codigo" : "MI4300", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d60870515" }, "nombre" : "ADMINISTRACION DE MANTENIMIENTO II", "codigo" : "MI4305", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d60870517" }, "nombre" : "DISE�O DE BASES DE DATOS", "codigo" : "MI4310", "creditos" : "2", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d6087051d" }, "nombre" : "ELECTROTECNIA", "codigo" : "MI4510", "creditos" : "3", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421fee0364716d6087051f" }, "nombre" : "DISE�O MECANICO", "codigo" : "MI5151", "creditos" : "4", "escuela" : "MI" }
+{ "_id" : { "$oid" : "53421ff10364716d60870521" }, "nombre" : "DIBUJO", "codigo" : "CO2201", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870526" }, "nombre" : "TOPOGRAFIA", "codigo" : "CO2202", "creditos" : "4", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870529" }, "nombre" : "INTERPRETACION DE PLANOS", "codigo" : "CO2203", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087052b" }, "nombre" : "ESTATICA", "codigo" : "CO2205", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087052d" }, "nombre" : "COSTOS DE CONSTRUCCION I", "codigo" : "CO3103", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087052f" }, "nombre" : "TOPOGRAFIA APLICADA", "codigo" : "CO3301", "creditos" : "4", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870532" }, "nombre" : "GEOLOGIA APLICADA", "codigo" : "CO3302", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870535" }, "nombre" : "LAB. MECANICA DE SUELOS I", "codigo" : "CO3304", "creditos" : "1", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870539" }, "nombre" : "MECANICA DE SUELOS I", "codigo" : "CO3305", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087053c" }, "nombre" : "MECANICA DEL SOLIDO I", "codigo" : "CO3401", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087053f" }, "nombre" : "CONCRETO", "codigo" : "CO3403", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870542" }, "nombre" : "LABORATORIO DE CONCRETO", "codigo" : "CO3404", "creditos" : "1", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870546" }, "nombre" : "MECANICA DEL SOLIDO II", "codigo" : "CO3405", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870549" }, "nombre" : "ESTRUCTURAS DE CONCRETO", "codigo" : "CO3407", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087054c" }, "nombre" : "HIDRAULICA", "codigo" : "CO3501", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087054e" }, "nombre" : "LABORATORIO DE HIDRAULICA", "codigo" : "CO3503", "creditos" : "1", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870553" }, "nombre" : "TALLER II", "codigo" : "CO4106", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870556" }, "nombre" : "PROGRAMACION DE PROYECTOS", "codigo" : "CO4107", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870559" }, "nombre" : "TALLER I", "codigo" : "CO4108", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087055c" }, "nombre" : "CARRETERAS I", "codigo" : "CO4307", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087055e" }, "nombre" : "MECANICA DE SUELOS II", "codigo" : "CO4308", "creditos" : "4", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870561" }, "nombre" : "CARRETERAS II", "codigo" : "CO4309", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870564" }, "nombre" : "CONST.DE ESTRUC. DE CONCRETO", "codigo" : "CO4405", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870567" }, "nombre" : "ESTRUCTURAS DE MAMPOSTERIA", "codigo" : "CO4406", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870569" }, "nombre" : "ESTRUCTURAS DE ACERO", "codigo" : "CO4409", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087056c" }, "nombre" : "INSTALACIONES ELECTROMECANICAS", "codigo" : "CO4505", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087056e" }, "nombre" : "DISE�O DE PROCESOS CONSTRUCTIVOS", "codigo" : "CO5012", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870570" }, "nombre" : "ANALISIS ESTRUCTURAL", "codigo" : "CO5013", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870573" }, "nombre" : "PROCESOS CONSTRUCTIVOS", "codigo" : "CO5022", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870575" }, "nombre" : "ESTRUCTURAS TEMPORALES", "codigo" : "CO5023", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870577" }, "nombre" : "NORMATIVA EN LA CONSTRUCCION", "codigo" : "CO5024", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870579" }, "nombre" : "ADMINISTRACION DE EMPRESAS CONSTRUCTORAS", "codigo" : "CO5031", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087057c" }, "nombre" : "CONSTRUCCION DE PAVIMENTOS", "codigo" : "CO5032", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d6087057f" }, "nombre" : "CONTROL DE COSTOS DE CONSTRUCCION", "codigo" : "CO5051", "creditos" : "3", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff10364716d60870582" }, "nombre" : "TALLER DE DISE�O", "codigo" : "CO5056", "creditos" : "4", "escuela" : "CO" }
+{ "_id" : { "$oid" : "53421ff50364716d60870584" }, "nombre" : "LABORATORIO CIRCUITOS ELECTRICOS EN CORRIENTE CONTINUA", "codigo" : "EL2107", "creditos" : "1", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d60870589" }, "nombre" : "LAB. CIRCUITOS ELECTR. EN CORRIENTE ALTERNA", "codigo" : "EL2108", "creditos" : "1", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d6087058d" }, "nombre" : "CIRCUITOS ELECTRICOS EN CORRIENTE CONTINUA", "codigo" : "EL2113", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d60870592" }, "nombre" : "CIRCUITOS ELECTRICOS EN CORRIENTE ALTERNA", "codigo" : "EL2114", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d60870596" }, "nombre" : "LABORATORIO DE ELEMENTOS ACTIVOS", "codigo" : "EL2206", "creditos" : "1", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d60870599" }, "nombre" : "ELEMENTOS ACTIVOS", "codigo" : "EL2207", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d6087059b" }, "nombre" : "TRANSFORMADORES Y MAQUINAS ELECTRICAS", "codigo" : "EL3111", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d6087059d" }, "nombre" : "LABORATORIO DE CIRCUITOS DISCRETOS", "codigo" : "EL3205", "creditos" : "1", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705a0" }, "nombre" : "CIRCUITOS DISCRETOS", "codigo" : "EL3212", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705a4" }, "nombre" : "CIRCUITOS INTEGRADOS LINEALES", "codigo" : "EL3213", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705a6" }, "nombre" : "LAB. DE CIRCUITOS INTEGRADOS LINEALES", "codigo" : "EL3214", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705a9" }, "nombre" : "DISE�O LOGICO", "codigo" : "EL3307", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705ac" }, "nombre" : "LABORATORIO DE DISE�O LOGICO", "codigo" : "EL3308", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705af" }, "nombre" : "DISE�O DE SISTEMAS DIGITALES", "codigo" : "EL3310", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705b1" }, "nombre" : "LAB. DE DISE�O DE SISTEMAS DIGITALES", "codigo" : "EL3312", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705b4" }, "nombre" : "LAB. DE TRANSFORMADORES Y MAQUINAS ELECTRICAS", "codigo" : "EL4105", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705b6" }, "nombre" : "ELECTRONICA DE POTENCIA", "codigo" : "EL4210", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705b8" }, "nombre" : "LAB. DE ELECTRONICA DE POTENCIA", "codigo" : "EL4211", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705ba" }, "nombre" : "ESTRUCTURA DE MICROPROCESADORES", "codigo" : "EL4311", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705bc" }, "nombre" : "LAB. ESTRUCTURA DE MICROPROCESADORES", "codigo" : "EL4313", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705bf" }, "nombre" : "ANALISIS DE SISTEMAS LINEALES", "codigo" : "EL4409", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705c2" }, "nombre" : "TEORIA ELECTROMAGNETICA I", "codigo" : "EL4513", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705c4" }, "nombre" : "TEORIA ELECTROMAGNETICA II", "codigo" : "EL4514", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705c7" }, "nombre" : "LAB. DE TEORIA ELECTOMAGNETICA II", "codigo" : "EL4515", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705c9" }, "nombre" : "CIRCUITOS ELECTRONICOS, ANALOGICOS Y DIGITALES", "codigo" : "EL4601", "creditos" : "3", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705cc" }, "nombre" : "MODELOS DE SISTEMAS", "codigo" : "EL4701", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705ce" }, "nombre" : "PROBABILIDAD Y ESTADISTICA", "codigo" : "EL4702", "creditos" : "3", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705d1" }, "nombre" : "CONTROL AUTOMATICO", "codigo" : "EL5408", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705d3" }, "nombre" : "LABORATORIO DE CONTROL AUTOMATICO", "codigo" : "EL5409", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705d7" }, "nombre" : "COMUNICACIONES ELECTRICAS", "codigo" : "EL5511", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705da" }, "nombre" : "LABORATORIO DE COMUNICACIONES ELECTRICAS", "codigo" : "EL5512", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705dd" }, "nombre" : "FORMULACION DE PROYECTOS", "codigo" : "EL5609", "creditos" : "2", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705df" }, "nombre" : "PROYECTO DE GRADUACION", "codigo" : "EL5616", "creditos" : "10", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705e1" }, "nombre" : "ARQUITECTURA DE SISTEMAS MICROELECTRONICOS", "codigo" : "EL5702", "creditos" : "3", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff50364716d608705e4" }, "nombre" : "REDES DE COMPUTADORAS", "codigo" : "EL5803", "creditos" : "4", "escuela" : "E" }
+{ "_id" : { "$oid" : "53421ff90364716d608705e7" }, "nombre" : "ESTUDIO DEL TRABAJO I", "codigo" : "PI2304", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d608705ec" }, "nombre" : "APLICACIONES COMPUTACIONALES", "codigo" : "PI2407", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d608705ef" }, "nombre" : "ANALISIS ESTADISTICO", "codigo" : "PI2608", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d608705f1" }, "nombre" : "PROBABILIDAD Y ESTADISTICA", "codigo" : "PI2609", "creditos" : "2", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d608705f5" }, "nombre" : "PROBABILIDAD Y ESTADISTICA I", "codigo" : "PI2610", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d608705fb" }, "nombre" : "LOGISTICA Y ADMINISTRACION DE LA CADENA DE ABASTECIMIENTO", "codigo" : "PI3206", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d608705ff" }, "nombre" : "GESTION DE CALIDAD", "codigo" : "PI3306", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870602" }, "nombre" : "ESTUDIO DEL TRABAJO II", "codigo" : "PI3308", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870605" }, "nombre" : "SISTEMA DE INFORMACION", "codigo" : "PI3403", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870609" }, "nombre" : "COMPUTACION INDUSTRIAL", "codigo" : "PI3407", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087060c" }, "nombre" : "COSTOS INDUSTRIALES I", "codigo" : "PI3501", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870611" }, "nombre" : "COSTOS INDUSTRIALES II", "codigo" : "PI3502", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870615" }, "nombre" : "DIRECCION DE PERSONAL", "codigo" : "PI3512", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087061a" }, "nombre" : "INVESTIGACION DE OPERACIONES I", "codigo" : "PI3603", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087061f" }, "nombre" : "PROBABILIDAD Y ESTADISTICA II", "codigo" : "PI3611", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870625" }, "nombre" : "ADMINISTRACION DE LA PRODUCCION", "codigo" : "PI3901", "creditos" : "2", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870627" }, "nombre" : "CONTROL DE PRODUCCION", "codigo" : "PI4303", "creditos" : "4", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087062a" }, "nombre" : "METROLOGIA Y NORMALIZACION", "codigo" : "PI4306", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087062e" }, "nombre" : "CONTROL DE CALIDAD", "codigo" : "PI4307", "creditos" : "4", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870633" }, "nombre" : "PLANEACION Y DISE�O DE INSTALACIONES", "codigo" : "PI4309", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870636" }, "nombre" : "ANALISIS ECONOMICO", "codigo" : "PI4505", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870639" }, "nombre" : "ADMINISTRACION DE PROYECTOS", "codigo" : "PI4802", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087063d" }, "nombre" : "GESTION DE LA INNOVACION", "codigo" : "PI4803", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870640" }, "nombre" : "DISE�O DE EXPERIMENTOS", "codigo" : "PI5302", "creditos" : "4", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870642" }, "nombre" : "SIMULACION INDUSTRIAL", "codigo" : "PI5401", "creditos" : "4", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870646" }, "nombre" : "AUTOMATIZACION DE MANUFACTURA", "codigo" : "PI5402", "creditos" : "4", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087064a" }, "nombre" : "TOPICOS AVANZADOS DE PRODUCCION", "codigo" : "PI5408", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d6087064d" }, "nombre" : "INGENIERIA ECONOMICA", "codigo" : "PI5516", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870650" }, "nombre" : "DIAGNOSTICO INDUSTRIAL", "codigo" : "PI5601", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870653" }, "nombre" : "EVALUACION DE PROYECTOS DE INVERSION", "codigo" : "PI5706", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ff90364716d60870655" }, "nombre" : "INGENIERIA DE LA CONFIABILIDAD", "codigo" : "PI5707", "creditos" : "3", "escuela" : "PI" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870659" }, "nombre" : "FUNDAMENTOS DE ANATOMIA Y FISIOLOGIA HUMANA", "codigo" : "SO1501", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d6087065c" }, "nombre" : "RIESGOS EN INSTALACIONES MAQUINARIA Y EQUIPOS", "codigo" : "SO2205", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870661" }, "nombre" : "AGENTES AMBIENTALES FISICOS", "codigo" : "SO2307", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870664" }, "nombre" : "TALLER DE AGENTES AMBIENTALES FISICOS", "codigo" : "SO2308", "creditos" : "2", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870668" }, "nombre" : "RIESGOS EN ACTIVIDADES ESPECIFICAS", "codigo" : "SO2403", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d6087066b" }, "nombre" : "PSICOSOCIOLOGIA DE LA PREVENCION", "codigo" : "SO2502", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d6087066e" }, "nombre" : "FUNDAMENTOS DE SEGURIDAD E HIGIENE OCUPACIONAL", "codigo" : "SO2601", "creditos" : "1", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870670" }, "nombre" : "IGNEOLOGIA DE RIESGOS ELECTRICOS", "codigo" : "SO3203", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870673" }, "nombre" : "AGENTES AMBIENTALES QUIMICOS Y BIOLOGICOS", "codigo" : "SO3303", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870675" }, "nombre" : "LEGISLACION EN SALUD OCUPACIONAL Y AMBIENTAL", "codigo" : "SO3504", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870678" }, "nombre" : "METODOLOGIA INVESTIGACION", "codigo" : "SO3506", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d6087067a" }, "nombre" : "CONTROL DE AGENTES QUIMICOS", "codigo" : "SO4305", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d6087067d" }, "nombre" : "GERENCIA DE RIESGOS", "codigo" : "SO4402", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870680" }, "nombre" : "EPIDEMIOLOGIA", "codigo" : "SO4504", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870683" }, "nombre" : "SEGURIDAD Y SALUD OCUPACIONAL", "codigo" : "SO4604", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "53421ffb0364716d60870688" }, "nombre" : "SALUD OCUPACIONAL Y AMBIENTAL", "codigo" : "SO4605", "creditos" : "3", "escuela" : "SHO" }
+{ "_id" : { "$oid" : "534220040364716d608706b2" }, "nombre" : "CALCULO DIFERENCIAL E INTEGRAL", "codigo" : "MA1102", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220040364716d608706c7" }, "nombre" : "CALCULO Y ALGEBRA LINEAL", "codigo" : "MA1103", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d608706de" }, "nombre" : "MATEMATICA BASICA PARA ADMINISTRACION", "codigo" : "MA1301", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d608706e6" }, "nombre" : "CALCULO PARA ADMINISTRACION", "codigo" : "MA1302", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d608706fa" }, "nombre" : "CALCULO SUPERIOR", "codigo" : "MA2104", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d60870705" }, "nombre" : "ECUACIONES DIFERENCIALES", "codigo" : "MA2105", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d60870713" }, "nombre" : "CALCULO Y GEOMETRIA ANALITICA", "codigo" : "MA2117", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d60870715" }, "nombre" : "PROBABILIDADES", "codigo" : "MA2404", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d6087071c" }, "nombre" : "METODOS NUMERICOS", "codigo" : "MA3106", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "534220050364716d6087071f" }, "nombre" : "ESTADISTICA", "codigo" : "MA3405", "creditos" : "4", "escuela" : "MA" }
+{ "_id" : { "$oid" : "5342200c0364716d60870723" }, "nombre" : "LABORATORIO DE QUIMICA BASICA I", "codigo" : "QU1102", "creditos" : "1", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d60870762" }, "nombre" : "LABORAT. DE QUIMICA BASICA II", "codigo" : "QU1104", "creditos" : "1", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d6087076f" }, "nombre" : "QUIMICA BASICA I", "codigo" : "QU1106", "creditos" : "3", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d6087078c" }, "nombre" : "QUIMICA BASICA II", "codigo" : "QU1107", "creditos" : "3", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d60870799" }, "nombre" : "FUNDAMENTOS DE QUIMICA", "codigo" : "QU1902", "creditos" : "4", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d6087079b" }, "nombre" : "LAB. FUNDAMENTOS QUIMICA ORGANICA", "codigo" : "QU2402", "creditos" : "1", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d608707a2" }, "nombre" : "QUIMICA ORGANICA", "codigo" : "QU2403", "creditos" : "3", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d608707a4" }, "nombre" : "LABORATORIO DE QUIMICA ORGANICA", "codigo" : "QU2404", "creditos" : "2", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d608707a8" }, "nombre" : "LABORATORIODE QUIMICA ORGANICA Y BIOQUIMICA", "codigo" : "QU2406", "creditos" : "1", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d608707ab" }, "nombre" : "FUNDAMENTOS DE QUIMICA ORGANICA", "codigo" : "QU2407", "creditos" : "3", "escuela" : "QU" }
+{ "_id" : { "$oid" : "5342200d0364716d608707af" }, "nombre" : "QUIMICA ORGANICA Y BIOQUIMICA", "codigo" : "QU2408", "creditos" : "4", "escuela" : "QU" }
+{ "_id" : { "$oid" : "534220100364716d608707b2" }, "nombre" : "ANALISIS DE PRODUCTO I", "codigo" : "ID1101", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707b7" }, "nombre" : "TEORIA DEL DISE�O I", "codigo" : "ID1102", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707bb" }, "nombre" : "METODOS DE DESARROLLO DE PRODUCTOS", "codigo" : "ID1103", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707bf" }, "nombre" : "ANALISIS DE PRODUCTO II", "codigo" : "ID1104", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707c2" }, "nombre" : "TEORIA DEL DISE�O II", "codigo" : "ID1105", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707c5" }, "nombre" : "REPRESENTACION I", "codigo" : "ID1201", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707c9" }, "nombre" : "REPRESENTACION II", "codigo" : "ID1202", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707cd" }, "nombre" : "TEORIA DEL DISE�O III", "codigo" : "ID2106", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707d1" }, "nombre" : "DISE�O I", "codigo" : "ID2107", "creditos" : "4", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707d5" }, "nombre" : "DISE�O II", "codigo" : "ID2108", "creditos" : "4", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707da" }, "nombre" : "REPRESENTACION III", "codigo" : "ID2203", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707df" }, "nombre" : "HERRAMIENTAS DIGITALES PARA DISE�O", "codigo" : "ID2204", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707e3" }, "nombre" : "PRINCIPIOS ESTRUCTURALES", "codigo" : "ID2301", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707e7" }, "nombre" : "PROCESOS DE MANUFACTURA I", "codigo" : "ID2302", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707ec" }, "nombre" : "ERGONOMIA", "codigo" : "ID2401", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707ee" }, "nombre" : "DISE�O III", "codigo" : "ID3109", "creditos" : "4", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707f2" }, "nombre" : "DISE�O IV", "codigo" : "ID3110", "creditos" : "4", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707f5" }, "nombre" : "DISE�O V", "codigo" : "ID3111", "creditos" : "4", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707f8" }, "nombre" : "DISE�O VI", "codigo" : "ID3112", "creditos" : "4", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707fa" }, "nombre" : "BIONICA Y ECO-DISE�O", "codigo" : "ID3113", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707fc" }, "nombre" : "CULTURA MATERIAL", "codigo" : "ID3205", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d608707fe" }, "nombre" : "PROCESOS DE MANUFACTURA II", "codigo" : "ID3303", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d60870802" }, "nombre" : "PROCESOS DE MANUFACTURA III", "codigo" : "ID3304", "creditos" : "2", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d60870805" }, "nombre" : "DISE�O DE PRODUCTOS VII", "codigo" : "ID4501", "creditos" : "5", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d60870807" }, "nombre" : "DISE�O VIII (PROYECTO DE GRADUACI�N)", "codigo" : "ID4503", "creditos" : "10", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d60870809" }, "nombre" : "DISE�O DE COMUNICACION VISUAL VII", "codigo" : "ID4601", "creditos" : "5", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d6087080b" }, "nombre" : "TALLER DE DISE�O PARA LA MANUFACTURA", "codigo" : "ID5502", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d6087080d" }, "nombre" : "DISE�O IX (PRODUCTOS)", "codigo" : "ID5505", "creditos" : "5", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d6087080f" }, "nombre" : "SEMINARIO DE INVESTIGACION (PRODUCTOS)", "codigo" : "ID5506", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d60870811" }, "nombre" : "MANUFACTURA DE EMPAQUE / EMBALAJE", "codigo" : "ID5604", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d60870813" }, "nombre" : "DISE�O IX (COMUNICACION VISUAL)", "codigo" : "ID5605", "creditos" : "5", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220100364716d60870815" }, "nombre" : "TRABAJO FINAL DE GRADUACION (COMUNICACION VISUAL)", "codigo" : "ID5607", "creditos" : "3", "escuela" : "DI" }
+{ "_id" : { "$oid" : "534220120364716d60870818" }, "nombre" : "FUNDAMENTOS DE INGENIERIA AGRICOLA", "codigo" : "IA1002", "creditos" : "1", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d6087081b" }, "nombre" : "EDAFOLOGIA", "codigo" : "IA2101", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d6087081e" }, "nombre" : "LABORATORIO DE EDAFOLOGIA", "codigo" : "IA2105", "creditos" : "2", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870822" }, "nombre" : "PROGRAMACION APLICADA", "codigo" : "IA2204", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870824" }, "nombre" : "SUELOS Y LABRANZA", "codigo" : "IA3010", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870827" }, "nombre" : "HIDROLOGIA", "codigo" : "IA3203", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d6087082a" }, "nombre" : "RESISTENCIA DE MATERIALES", "codigo" : "IA3206", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d6087082d" }, "nombre" : "ELECTRICIDAD", "codigo" : "IA3208", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870830" }, "nombre" : "MECANICA DE FLUIDOS APLICADA", "codigo" : "IA3212", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870833" }, "nombre" : "TOPOGRAFIA", "codigo" : "IA3302", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870836" }, "nombre" : "ELEMENTOS Y MECANISMOS DE MAQUINAS AGRICOLAS.", "codigo" : "IA3401", "creditos" : "2", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870838" }, "nombre" : "DISE�O ESTRUCTURAS HIDRAULICAS", "codigo" : "IA4307", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d6087083b" }, "nombre" : "RIEGO SUPERFICIAL", "codigo" : "IA4311", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d6087083d" }, "nombre" : "DRENAJE SUPERFICIAL", "codigo" : "IA4312", "creditos" : "2", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870840" }, "nombre" : "MOTORES DE COMBUSTION INTERNA", "codigo" : "IA4402", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870842" }, "nombre" : "MECANIZACION AGRICOLA", "codigo" : "IA4403", "creditos" : "2", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870844" }, "nombre" : "TRACTORES AGRICOLAS", "codigo" : "IA4407", "creditos" : "2", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870846" }, "nombre" : "LABORTORIO DE TRACTORES Y MECANIZACION", "codigo" : "IA5402", "creditos" : "2", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d60870849" }, "nombre" : "SISTEMA DE INFORMACION GEOGRAFICO", "codigo" : "IA5604", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220120364716d6087084c" }, "nombre" : "TECNOLOGIAS EN AMBIENTES PROTEGIDOS", "codigo" : "IA5605", "creditos" : "3", "escuela" : "IA" }
+{ "_id" : { "$oid" : "534220140364716d6087084f" }, "nombre" : "INTRODUCCION A LA ING. FORESTAL", "codigo" : "FO1103", "creditos" : "1", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870852" }, "nombre" : "LAB. INTRODUCCION A LA ING FORESTAL", "codigo" : "FO1104", "creditos" : "2", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870856" }, "nombre" : "CLIMATOLOGIA FORESTAL", "codigo" : "FO1106", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870859" }, "nombre" : "DENDROLOGIA TROPICAL", "codigo" : "FO2109", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d6087085d" }, "nombre" : "SILVICULTURA", "codigo" : "FO2112", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870860" }, "nombre" : "ANALISIS ESTADISTICO", "codigo" : "FO2113", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870863" }, "nombre" : "MEDICIONES FORESTALES", "codigo" : "FO2202", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870867" }, "nombre" : "PROPIEDADES DE LA MADERA", "codigo" : "FO2303", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d6087086a" }, "nombre" : "SILVICULTURA BOSQUE NATURAL", "codigo" : "FO3118", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d6087086d" }, "nombre" : "MEJORA GENETICA FORESTAL", "codigo" : "FO3123", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870870" }, "nombre" : "METODOS DE INVESTIGACI�N FORESTAL", "codigo" : "FO3130", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870872" }, "nombre" : "APROVECHAMIENTO FORESTAL I", "codigo" : "FO3203", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870875" }, "nombre" : "SISTEMAS DE INFORMACION GEOGRAFICA", "codigo" : "FO3401", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870878" }, "nombre" : "SANIDAD FORESTAL II", "codigo" : "FO4101", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d6087087b" }, "nombre" : "GESTION DE INDUSTRIAS FORESTALES", "codigo" : "FO4102", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d6087087e" }, "nombre" : "FORMULACION Y EVALUACION DE PROYECTOS", "codigo" : "FO4104", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870881" }, "nombre" : "PRODUCTOS NO MADERABLES DEL BOSQUE", "codigo" : "FO4124", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870884" }, "nombre" : "MANUFACTURA DE PRODUCTOS FORESTALES I", "codigo" : "FO4308", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870886" }, "nombre" : "SISTEMAS DE SENSORES REMOTOS", "codigo" : "FO4409", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870888" }, "nombre" : "MERCADEO Y COMERCIALIZACION DE PRODUCTOS FORESTALES", "codigo" : "FO4412", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d6087088a" }, "nombre" : "SEMINARIO DE GRADUACION", "codigo" : "FO5049", "creditos" : "2", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d6087088d" }, "nombre" : "EXTENSION FORESTAL", "codigo" : "FO5101", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220140364716d60870890" }, "nombre" : "GESTION DE AREAS SILVESTRES", "codigo" : "FO5102", "creditos" : "3", "escuela" : "FO" }
+{ "_id" : { "$oid" : "534220150364716d60870892" }, "nombre" : "DESARROLLO HUMANO SOSTENIBLE", "codigo" : "TS1200", "creditos" : "2", "escuela" : "GTS" }
+{ "_id" : { "$oid" : "534220150364716d60870894" }, "nombre" : "FORMULACION Y EVALUACION DE PROYECTOS", "codigo" : "TS2301", "creditos" : "4", "escuela" : "GTS" }
+{ "_id" : { "$oid" : "534220160364716d60870897" }, "nombre" : "MICROBIOLOGIA AMBIENTAL", "codigo" : "AI3101", "creditos" : "4", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d6087089a" }, "nombre" : "LABORATORIO DE MICROBIOLOGIA AMBIENTAL", "codigo" : "AI3103", "creditos" : "2", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d6087089d" }, "nombre" : "OPERACIONES UNITARIAS", "codigo" : "AI3202", "creditos" : "4", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708a0" }, "nombre" : "INTRODUCCION A LA INGENIERIA AMBIENTAL Y SANEAMIENTO", "codigo" : "AI3203", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708a5" }, "nombre" : "HIDRAULICA PARA INGENIERIA AMBIENTAL", "codigo" : "AI3208", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708a8" }, "nombre" : "HIDROLOGIA", "codigo" : "AI3209", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708aa" }, "nombre" : "INGENIERIA EN EMISIONES ATMOSFERICAS", "codigo" : "AI4203", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708ae" }, "nombre" : "GESTION Y DISE�O EN TRATAMIENTOS DE RESIDUOS SOLIDOS", "codigo" : "AI4204", "creditos" : "4", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708b0" }, "nombre" : "RECURSOS ENERGETICOS", "codigo" : "AI4306", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708b2" }, "nombre" : "TOXICOLOGIA", "codigo" : "AI5101", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708b4" }, "nombre" : "DISE�O EN INSTALACIONES HIDRAULICAS Y SANITARIAS PARA EFIFICACIONES Y URBANIZACIONES", "codigo" : "AI5103", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708b6" }, "nombre" : "MANEJO Y REMEDIACION DE SUELOS", "codigo" : "AI5202", "creditos" : "4", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708b8" }, "nombre" : "METODOLOGIA DE EVALUACION DE IMPACTO AMBIENTAL", "codigo" : "AI5304", "creditos" : "3", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220160364716d608708ba" }, "nombre" : "SEMINARIO DE INVESTIGACION", "codigo" : "AI5904", "creditos" : "4", "escuela" : "AMB" }
+{ "_id" : { "$oid" : "534220190364716d608708bd" }, "nombre" : "INTRODUCCION A LA BIOTECNOLOGIA", "codigo" : "IB1601", "creditos" : "2", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708c2" }, "nombre" : "MICROBIOLOGIA APLICADA", "codigo" : "IB2105", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708c5" }, "nombre" : "LABORATORIO DE MICROBIOLOGIA APLICADA", "codigo" : "IB2106", "creditos" : "1", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708ca" }, "nombre" : "FISIOLOGIA VEGETAL", "codigo" : "IB2205", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708cd" }, "nombre" : "BIOTECNOLOGIA DE MICROORGANISMOS", "codigo" : "IB2209", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708d0" }, "nombre" : "LABORATORIO DE FISIOLOGIA VEGETAL", "codigo" : "IB2211", "creditos" : "2", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708d5" }, "nombre" : "LABORATORIO DE GENETICA", "codigo" : "IB2302", "creditos" : "1", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708dc" }, "nombre" : "GENETICA", "codigo" : "IB2304", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708de" }, "nombre" : "BIOTECNOLOGIA Y GENETICA HUMANA", "codigo" : "IB2503", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708e1" }, "nombre" : "SEMINARIO TALLER DE FORMULACION, EVALUACION Y GESTACION DE PROYECTOS", "codigo" : "IB3101", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708e3" }, "nombre" : "CULTIVOS DE TEJIDOS I", "codigo" : "IB3202", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708e6" }, "nombre" : "LABORATORIO DE CULTIVO DE TEJIDOS I", "codigo" : "IB3203", "creditos" : "2", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708ed" }, "nombre" : "INGENIERIA BIOQUIMICA", "codigo" : "IB3204", "creditos" : "4", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708f1" }, "nombre" : "SISTEMAS BIOTECNOLOGICOS DE PRODUCCION", "codigo" : "IB4505", "creditos" : "4", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708f4" }, "nombre" : "TRATAMIENTO BIOTECNOLOGICO DE AGUAS RESIDUALES", "codigo" : "IB4803", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708f8" }, "nombre" : "PROCESOS BIOTECNOLOGICOS CON EL EMPLEO DE HONGOS", "codigo" : "IB4809", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220190364716d608708fa" }, "nombre" : "PROPIEDAD INTELECTUAL, INNOVACION Y BIOTECNOLOGIA", "codigo" : "IB4811", "creditos" : "3", "escuela" : "IB" }
+{ "_id" : { "$oid" : "534220410364716d60870923" }, "nombre" : "INTRODUCCION AL DESARROLLO DE APLICACIONES PARA WEB", "codigo" : "IC8016", "creditos" : "3", "escuela" : "CA" }
+{ "_id" : { "$oid" : "5342207c0364716d60870959" }, "nombre" : "CONTABILIDAD IV", "codigo" : "LA5125", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d6087095c" }, "nombre" : "ADMINISTRACION FINANCIERA III", "codigo" : "LA5131", "creditos" : "4", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d6087095e" }, "nombre" : "CONTABILIDAD DE COSTOS II", "codigo" : "LA5135", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d60870960" }, "nombre" : "AUDITORIA FINANCIERA", "codigo" : "LA5136", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d60870962" }, "nombre" : "PRESUPUESTO Y CONTROL FINANCIERO", "codigo" : "LA5137", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d60870965" }, "nombre" : "POLITICAS ECONOMICAS", "codigo" : "LA5301", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d60870968" }, "nombre" : "SISTEMAS DE INFORMACION DE MERCADEO", "codigo" : "LA5413", "creditos" : "4", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d6087096b" }, "nombre" : "PROGRAMA PROMOCIONAL I", "codigo" : "LA5414", "creditos" : "4", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d6087096d" }, "nombre" : "SEMINARIO GERENCIAL", "codigo" : "LA6002", "creditos" : "8", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d60870973" }, "nombre" : "AUDITORIA PROCES. ELECTR. DATOS II", "codigo" : "LA6142", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d60870976" }, "nombre" : "PRACTICA PROFESIONAL", "codigo" : "LA6143", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d60870978" }, "nombre" : "INFORMES DEL CONTADOR PUBLICO", "codigo" : "LA6144", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "5342207c0364716d6087097b" }, "nombre" : "CONSULTORIA DE EMPRESAS", "codigo" : "LA6145", "creditos" : "3", "escuela" : "AEL" }
+{ "_id" : { "$oid" : "534220850364716d6087097d" }, "nombre" : "TOPICOS ESPECIALES DE COMPUTACION II", "codigo" : "MC0804", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870980" }, "nombre" : "TEORIA DE AUTOMATAS", "codigo" : "MC6003", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870982" }, "nombre" : "SISTEMAS OPERATIVOS AVANZADOS", "codigo" : "MC6004", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870984" }, "nombre" : "INTELIGENCIA ARTIFICIAL", "codigo" : "MC6101", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870986" }, "nombre" : "ADMINISTRACION DE PROYECTOS I", "codigo" : "MC6202", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870988" }, "nombre" : "ADMINISTRACION DE LA FUNCION DE INFORMACION", "codigo" : "MC6203", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d6087098b" }, "nombre" : "MODELOS DE DESARROLLO DE SOFTWARE", "codigo" : "MC7010", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d6087098e" }, "nombre" : "ADQUISICION DE TI Y ADMINISTRACION DE \"OUTSOURCING\"", "codigo" : "MC7011", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870990" }, "nombre" : "TALLER DE MODELOS DE DESARROLLO DE SOFTWARE", "codigo" : "MC7013", "creditos" : "2", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870992" }, "nombre" : "TALLER DE ADQUISICION DE TI Y ADMINISTRACION DE \"OUTSOURCING\"", "codigo" : "MC7015", "creditos" : "2", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870995" }, "nombre" : "TEMA SELECTO DE INVESTIGACION", "codigo" : "MC7205", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "534220850364716d60870997" }, "nombre" : "SISTEMAS DISTRIBUIDOS", "codigo" : "MC7304", "creditos" : "4", "escuela" : "MC" }
+{ "_id" : { "$oid" : "5342208c0364716d608709aa" }, "nombre" : "CONTABILIDAD II", "codigo" : "AE1123", "creditos" : "4", "escuela" : "AE" }
+{ "_id" : { "$oid" : "5342208c0364716d608709b3" }, "nombre" : "CONTABILIDAD DE COSTOS I", "codigo" : "AE2126", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "5342208c0364716d608709b6" }, "nombre" : "MACROECONOMIA", "codigo" : "AE2311", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "5342208c0364716d608709b8" }, "nombre" : "ESTADISTICA II", "codigo" : "AE2506", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "5342208c0364716d608709bc" }, "nombre" : "ADMINISTRACION FINANCIERA II", "codigo" : "AE3128", "creditos" : "4", "escuela" : "AE" }
+{ "_id" : { "$oid" : "5342208c0364716d608709c0" }, "nombre" : "MERCADOTECNIA II", "codigo" : "AE3413", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "5342208c0364716d608709c2" }, "nombre" : "PRODUCTIVIDAD EMPRESARIAL", "codigo" : "AE3506", "creditos" : "3", "escuela" : "AE" }
+{ "_id" : { "$oid" : "5342208e0364716d608709db" }, "nombre" : "DINAMICA DE LA CULTURA", "codigo" : "SE1109", "creditos" : "0", "escuela" : "CD" }
+{ "_id" : { "$oid" : "5342208e0364716d608709e8" }, "nombre" : "SEMINARIO DE PROBLEMATICA URBANA", "codigo" : "CS2404", "creditos" : "1", "escuela" : "CS" }
+{ "_id" : { "$oid" : "534220900364716d608709fc" }, "nombre" : "PROBABILIDAD Y ESTADISTICA", "codigo" : "MA4210", "creditos" : "4", "escuela" : "MA" }
+{ "nombre" : "Vacaciones", "codigo" : "IC2004", "escuela" : "CA", "creditos" : "8", "_id" : { "$oid" : "53426242c8a0d6d391000001" } }
+{ "_id" : { "$oid" : "534ddb7b03649042ec015a37" }, "nombre" : "FUNDAMENTOS DE ORGANIZACION DE COMPUTADORAS", "codigo" : "IC1400", "creditos" : "3", "escuela" : "CA" }

@@ -1,11 +1,17 @@
 // Se definen todas las variables iniciales.
-var ruta_aplicacion = __dirname,
-	express 	= require('express'),
-	app 		= express(),
+var connect = require('connect'),
+	ruta_aplicacion = __dirname,
+	express = require("express"),
+	logfmt = require("logfmt"),
+	app = express(),
+	
+	ruta_aplicacion = __dirname,
 	path		= require('path'),
 	http		= require('http'),
 	server 		= http.createServer(app);
-	guiaDeHorarios = 'guiaDeHorariosPrueba',
+	
+	
+	guiaDeHorarios = 'mongodb://heroku_app24183267:ifjr7siso432arcdghdjco14v0@ds053438.mongolab.com:53438/heroku_app24183267',
 	colecciones	= ['usuarios','grupos','cursos','profesores','administradores'],
 	cons 		= require('consolidate'),
 	db 			= require('mongojs').connect(guiaDeHorarios,colecciones);
@@ -37,23 +43,41 @@ var errorHandler = function(err,req,res,next)
 	res.render('error_template',{error:err});
 }
 
-// Configuracion inicial de la aplicacion.
-app.configure(function(){
 
+
+// Configuracion inicial de la aplicacion.
+var env = process.env.NODE_ENV || 'development';
+
+if ('development' == env) {
+   	app.use(logfmt.requestLogger());
 	app.engine('html',cons.swig);
 	app.set('view engine','html');
 	app.set('views',__dirname + '/views');
 	app.use(allowCrossDomain);
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-	app.use(app.router);
+	app.use(require('body-parser')());
+	app.use(require('method-override')());
 	app.use(express.static(path.join(ruta_aplicacion+"/public")));
-	app.use(errorHandler);
+	app.use(require('errorhandler')());
+	//app.use(app.router);
+	
+   
+}
 
-});
 
-process.env.NODE_ENV = 'development';
+var mongo = require('mongodb');
 
+var mongoUri = process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://heroku_app24183267:ifjr7siso432arcdghdjco14v0@ds053438.mongolab.com:53438/heroku_app24183267';
+
+/*
+mongo.Db.connect(mongoUri, function (err, db) {
+	var name = "nombre";
+	
+  db.collection('profesores', function(er, collection) {
+    collection.insert({"nombre":name,"cantidadCalificaciones":0,"calificacionTotal":0},function(err,saved){});		
+  });
+});*/
 
 // Inicia la aplicacion que contiene el API
 app.get('/',function(req,res){
@@ -62,7 +86,40 @@ app.get('/',function(req,res){
 
 
 
+
+
 // FUNCIONES QUE CONECTAN CON LA BASE DE DATOS
+
+
+loginAdmin = function(req,res)
+{
+	var pass= req.param("password");
+	db.administradores.find({"password":pass},function(err,usuario){
+		if(err || !usuario){
+			res.send(400);
+		}
+		else
+		{
+			res.json(usuario);
+		}
+	});
+}
+
+
+login = function(req,res)
+{
+	var pass= req.param("password");
+	db.usuarios.find({"password":pass},function(err,usuario){
+		if(err || !usuario){
+			res.send(400);
+		}
+		else
+		{
+			res.json(usuario);
+		}
+	});
+}
+
 
 
 
@@ -254,26 +311,36 @@ findGroupByNumber = function(req,res)
 addProfessor = function(req,res,next){
 
 	var name = req.param("nombre");
-	
-	db.profesores.find({"nombre":name},function(err,professors){
-		if(professors.length > 0)
-		{
+    var pass= req.param("password");
+	db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			db.profesores.save({"nombre":name,"cantidadCalificaciones":0,"calificacionTotal":0},function(err,saved){
-				if(err || !saved)
-				{
-					res.send(400);
-				}
-				else
-				{
-					res.json(saved);
-				}
-			});		
-		}
-	});
+            db.profesores.find({"nombre":name},function(err,professors){
+                if(professors.length > 0)
+                {
+                    res.send(400);
+                }
+                else
+                {
+                    db.profesores.save({"nombre":name,"cantidadCalificaciones":0,"calificacionTotal":0},function(err,saved){
+                        if(err || !saved)
+                        {
+                            res.send(400);
+                        }
+                        else
+                        {
+                            res.json(saved);
+                        }
+                    });		
+                }
+            });
+                }
+            });
+    
+
 };
 
 
@@ -287,26 +354,36 @@ addCourse = function(req,res,next){
 	var code = req.param("codigo");
 	var school = req.param("escuela");
 	var credits = req.param("creditos");
+    var pass= req.param("password");
 	
-	db.cursos.find({"codigo":code},function(err,courses){
-		if(courses.length > 0)
-		{
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			db.cursos.save({"nombre":name,"codigo":code,"escuela":school,"creditos":credits},function(err,saved){
-				if(err || !saved)
-				{
-					res.send(400);
-				}
-				else
-				{
-					res.json(saved);
-				}
-			});		
+			db.cursos.find({"codigo":code},function(err,courses){
+                        if(courses.length > 0)
+                        {
+                            res.send(400);
+                        }
+                        else
+                        {
+                            db.cursos.save({"nombre":name,"codigo":code,"escuela":school,"creditos":credits},function(err,saved){
+                                if(err || !saved)
+                                {
+                                    res.send(400);
+                                }
+                                else
+                                {
+                                    res.json(saved);
+                                }
+                            });		
+                        }
+                    });
 		}
 	});
+
 };
 
 
@@ -320,29 +397,52 @@ addGroup = function(req,res,next){
 	var course = req.param("curso");
 	var schedule = req.param("horario");
 	var professor = req.param("profesor");
+    var pass= req.param("password");
 	
-	db.grupos.find({"curso":course,"numero":number},function(err,groups){
-		if(groups.length > 0)
-		{
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			db.grupos.save({"curso":course,"horario":schedule,"sede":sede,"numero":number,"profesor":professor},function(err,saved){
-				if(err || !saved)
-				{
-					res.send(400);
-				}
-				else
-				{
-					res.json(saved);
-				}
-			});		
+				
+            db.grupos.find({"curso":course,"numero":number},function(err,groups){
+                if(groups.length > 0)
+                {
+                    res.send(400);
+                }
+                else
+                {
+                    db.grupos.save({"curso":course,"horario":schedule,"sede":sede,"numero":number,"profesor":professor},function(err,saved){
+                        if(err || !saved)
+                        {
+                            res.send(400);
+                        }
+                        else
+                        {
+                            res.json(saved);
+                        }
+                    });		
+                }
+            });
 		}
 	});
+
 };
 
+//agrega un administrador al sistema
+addAdmin = function(req,res,next){
 
+	var username = req.param("username");
+	var pass = req.param("password");
+	
+    db.administradores.save({"username":username,"password":pass},function(err,saved){
+							if(err || !saved)
+								res.send(400);
+							else
+								res.json(saved);
+						});
+					};
 
 
 
@@ -355,32 +455,43 @@ addUser = function(req,res,next){
 	var pass = req.param("password");
 	var email = req.param("correo");
 	var face = req.param("facebook");
+    var passADM= req.param("passwordADM");
 	
-	db.usuarios.find({"correo":email},function(err,users){
-		if(users.length > 0)
-		{
+    db.administradores.find({"password":passADM},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			db.usuarios.find({"username":username},
-				function(err,users2){
-					if(users2.length > 0)
-					{
-						res.send(400);
-					}
-					else{
-						db.usuarios.save({"username":username,"correo":email,"password":pass,"facebook":face,"grupos":[],"cursos":[]},function(err,saved){
-							if(err || !saved)
-								res.send(400);
-							else
-								res.json(saved);
-						});
-					}
-				});
-				
+			db.usuarios.find({"correo":email},function(err,users){
+                if(users.length > 0)
+                {
+                    res.send(400);
+                }
+                else
+                {
+                    db.usuarios.find({"username":username},
+                        function(err,users2){
+                            if(users2.length > 0)
+                            {
+                                res.send(400);
+                            }
+                            else{
+                                db.usuarios.save({"username":username,"correo":email,"password":pass,"facebook":face,"grupos":[],"cursos":[]},function(err,saved){
+                                    if(err || !saved)
+                                        res.send(400);
+                                    else
+                                        res.json(saved);
+                                });
+                            }
+                        });
+
+                }
+            });
 		}
 	});
+	
+            
 };
 
 
@@ -397,9 +508,20 @@ deleteGroup = function(req,res)
 {
 	var course = req.param("curso");
 	var number = req.param("numero");
-	db.grupos.remove({"curso":course,"numero":number},false,function(err,deleted){
-		res.send(200);
+    var pass= req.param("password");
+	
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
+			res.send(400);
+		}
+		else
+		{
+				db.grupos.remove({"curso":course,"numero":number},false,function(err,deleted){
+		          res.send(200);
 	});
+		}
+	});
+
 };
 
 
@@ -409,9 +531,20 @@ deleteGroup = function(req,res)
 deleteCourse = function(req,res)
 {
 	var code = req.param("codigo");
-	db.cursos.remove({"codigo":code},false,function(err,deleted){
-		res.send(200);
+    var pass= req.param("password");
+	
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
+			res.send(400);
+		}
+		else
+		{
+			db.cursos.remove({"codigo":code},false,function(err,deleted){
+                res.send(200);
+            });
+		}
 	});
+            
 };
 
 
@@ -421,9 +554,20 @@ deleteCourse = function(req,res)
 deleteUser = function(req,res)
 {
 	var email = req.param("correo");
-	db.usuarios.remove({"correo":email},false,function(err,deleted){
-		res.send(200);
+    var pass= req.param("password");
+	
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
+			res.send(400);
+		}
+		else
+		{
+			db.usuarios.remove({"correo":email},false,function(err,deleted){
+                res.send(200);
+            });
+		}
 	});
+            
 };
 
 
@@ -433,9 +577,21 @@ deleteUser = function(req,res)
 deleteProfessor = function(req,res)
 {
 	var name = req.param("nombre");
-	db.profesores.remove({"nombre":name},false,function(err,deleted){
-		res.send(200);
+    var pass= req.param("password");
+	
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
+			res.send(400);
+		}
+		else
+		{
+				db.profesores.remove({"nombre":name},false,function(err,deleted){
+		      res.send(200);
+	       });
+		}
 	});
+
+    
 };
 
 
@@ -449,15 +605,27 @@ updateUser = function(req,res)
 	var username = req.param("username");
 	var pass = req.param("password");
 	var face = req.param("facebook");
-	db.usuarios.update({"correo":email},{$set:{"correo":email,"username":username,"password":pass,"facebook":face}},{multi:true},function(err,changed){
-		if(err || !changed){
+    
+    var passADM= req.param("passwordADM");
+	
+    db.administradores.find({"password":passADM},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			res.json(changed);
+			db.usuarios.update({"correo":email},{$set:{"correo":email,"username":username,"password":pass,"facebook":face}},{multi:true},function(err,changed){
+                if(err || !changed){
+                    res.send(400);
+                }
+                else
+                {
+                    res.json(changed);
+                }
+            });
 		}
 	});
+            
 };
 
 
@@ -468,15 +636,27 @@ updateProfessor = function(req,res)
 {
 	var name = req.param("nombre");
 	var newName = req.param("nuevo");
-	db.profesores.update({"nombre":name},{$set:{"nombre":newName}},{multi:true},function(err,changed){
-		if(err || !changed){
+    var pass= req.param("password");
+    
+	
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			res.json(changed);
+			db.profesores.update({"nombre":name},{$set:{"nombre":newName}},{multi:true},function(err,changed){
+                if(err || !changed){
+                    res.send(400);
+                }
+                else
+                {
+                    res.json(changed);
+                }
+            });
 		}
 	});
+            
 };
 
 
@@ -489,15 +669,26 @@ updateCourse = function(req,res)
 	var school = req.param("escuela");
 	var credits = req.param("creditos");
 	var name = req.param("nombre");
-	db.cursos.update({"codigo":code},{$set:{"nombre":name,"creditos":credits,"escuela":school}},{multi:true},function(err,changed){
-		if(err || !changed){
+    var pass= req.param("password");
+	
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			res.json(changed);
+			db.cursos.update({"codigo":code},{$set:{"nombre":name,"creditos":credits,"escuela":school}},{multi:true},function(err,changed){
+                if(err || !changed){
+                    res.send(400);
+                }
+                else
+                {
+                    res.json(changed);
+                }
+            });
 		}
 	});
+            
 };
 
 
@@ -510,18 +701,30 @@ updateGroup = function(req,res)
 	var professor = req.param("profesor");
 	var number = req.param("numero");
 	var sede = req.param("sede");
-	db.grupos.update({"numero":number,"curso":code},{$set:{"profesor":professor,"sede":sede}},{multi:true},function(err,changed){
-		if(err || !changed){
+    var pass= req.param("password");
+	
+    db.administradores.find({"password":pass},function(err,usuario){
+		if(!(usuario.length > 0)){
 			res.send(400);
 		}
 		else
 		{
-			res.json(changed);
+			db.grupos.update({"numero":number,"curso":code},{$set:{"profesor":professor,"sede":sede}},{multi:true},function(err,changed){
+                if(err || !changed){
+                    res.send(400);
+                }
+                else
+                {
+                    res.json(changed);
+                }
+            });
 		}
 	});
+            
 };
 
-
+app.post('/login/administrador',loginAdmin);
+app.post('/login/usuario',login);
 app.post('/update/user',updateUser);
 app.post('/update/professor',updateProfessor);
 app.post('/update/group',updateGroup);
@@ -543,9 +746,10 @@ app.post('/users',findAllUsers);
 app.post('/add/user',addUser);
 app.post('/add/professor',addProfessor);
 app.post('/add/course',addCourse);
+app.post('/add/admin',addAdmin);
 
 
 
-server.listen(1212,function(){
-	console.log("Node server running on localhost:1212");
+server.listen((process.env.PORT || 5000),function(){
+	console.log("Node server running");
 });

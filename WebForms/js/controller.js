@@ -4,15 +4,12 @@ var app = angular.module('BodyApp',[]);
 
 // Variable con el password encriptado del usuario logueado.
 var pass = '';
-var loggedName = '';
-var loggedLastName = '';
-var loggedEmail = '';
 
 
 // Configuracion inicial de la aplicacion que controlara la pagina web.
 app.config(function($locationProvider,$routeProvider){
 	$locationProvider.html5Mode(true);
-	$routeProvider.when('/',{controller:"crearCursoCtrl" , templateUrl:"/partials/creaCurso.html"});
+	$routeProvider.when('/',{controller:"loginCtrl" , templateUrl:"/partials/login.html"});
     $routeProvider.when('/crearCurso',{controller:"crearCursoCtrl" , templateUrl:"/partials/creaCurso.html"});
     $routeProvider.when('/crearGrupo',{controller:"crearGrupoCtrl" , templateUrl:"/partials/crearGrupo.html"});
     $routeProvider.when('/crearProfe',{controller:"crearProfeCtrl" , templateUrl:"/partials/creaProfe.html"});
@@ -32,8 +29,62 @@ app.config(['$httpProvider',function($httpProvider){
 	delete $httpProvider.defaults.headers.common['X-Requested-With'];	
 }]);
 
-
 // CONTROLADORES DE LAS DIFERENTES VISTAS.
+
+
+
+function loginCtrl($scope,$http,$templateCache,$location,$window)
+{
+    
+	$scope.registro = function()
+	{
+        var passT = hex_md5($scope.username + $scope.password);
+        
+		if($scope.username == null || $scope.password== null)
+		{
+			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos");
+		}
+		else{
+			var post = 'POST';
+			var urlReg = 'http://felialoismobile.herokuapp.com/login/administrador';
+			var formData = {
+                "password": passT,
+			};
+
+			var jdata = JSON.stringify(formData);
+
+			$http({
+				method: post,
+				url: urlReg,
+				data: jdata,
+				header:{'Content-Type':'application/x-www-form-urlencoded'},
+				cache: $templateCache
+			}).
+			success(function(data,status)
+		{
+			$scope.usuarios = data;
+			if($scope.usuarios.length > 0)
+			{
+				pass = $scope.usuarios[0].password;
+                ($window.mockWindow || $window).alert("Conectado con exito");
+                
+				$location.path('/crearCurso');
+			}
+			else
+			{
+				($window.mockWindow || $window).alert("ERROR: El usuario no esta registrado en el sistema.");
+				$scope.correo = '';
+				$scope.password = '';
+			}
+		}).
+		error(function(data,status)
+		{
+			$scope.usuarios = data || "Request Failed";
+		});
+		}
+	};
+}
+
 
 //controlador de crear curso
 function crearCursoCtrl($scope,$http,$templateCache,$location,$window)
@@ -47,12 +98,13 @@ function crearCursoCtrl($scope,$http,$templateCache,$location,$window)
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/add/course';
+			var urlReg = 'http://felialoismobile.herokuapp.com/add/course';
 			var formData = {
 				"nombre": $scope.nombre,
                 "codigo": $scope.codigo,
 				"creditos": $scope.creditos,
 				"escuela": $scope.escuela,
+                "password":pass,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -67,13 +119,13 @@ function crearCursoCtrl($scope,$http,$templateCache,$location,$window)
 			success(function(response)
 			{
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/');	
+				$location.path('/crearCurso');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/crearCurso');
 			});
 		}
 	};
@@ -84,16 +136,17 @@ function crearProfeCtrl($scope,$http,$templateCache,$location,$window)
 {
 	$scope.registro = function()
 	{
-
+        //($window.mockWindow || $window).alert(pass);
 		if($scope.nombre == null || $scope.apellidos== null)
 		{
 			($window.mockWindow || $window).alert("ATENCION: Todos los campos deben estar llenos para poder realizar el registro.");
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/add/professor';
+			var urlReg = 'http://felialoismobile.herokuapp.com/add/professor';
 			var formData = {
-				"nombre": $scope.apellidos+" "+$scope.nombre
+				"nombre": $scope.apellidos+" "+$scope.nombre,
+                "password":pass,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -109,13 +162,13 @@ function crearProfeCtrl($scope,$http,$templateCache,$location,$window)
 			{
 				
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/main');	
+				$location.path('/crearProfe');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/crearProfe');
 			});
 		}
 	};
@@ -126,7 +179,7 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
 {
     $scope.getCursos = function()
 	{	
-		var url = 'http://localhost:1212/courses';
+		var url = 'http://felialoismobile.herokuapp.com/courses';
 		var method = 'POST';
 
 		$http({
@@ -147,7 +200,7 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
     
     $scope.getProfesores = function()
 	{	
-		var url = 'http://localhost:1212/professors';
+		var url = 'http://felialoismobile.herokuapp.com/professors';
 		var method = 'POST';
 
 		$http({
@@ -183,10 +236,11 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/addplayer';
+			var urlReg = 'http://felialoismobile.herokuapp.com/addplayer';
 			var formData = {
 				"numero": $scope.numero,
 				"aula": $scope.aula,
+                "password":pass,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -206,13 +260,13 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
 				loggedLastName = $scope.newUser.apellido1;
 				loggedEmail = $scope.newUser.email;
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/main');	
+				$location.path('/crearGrupo');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/crearGrupo');
 			});
 		}
 	};
@@ -231,12 +285,13 @@ function crearUsuarioCtrl($scope,$http,$templateCache,$location,$window)
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/add/user';
+			var urlReg = 'http://felialoismobile.herokuapp.com/add/user';
 			var formData = {
                 "correo":$scope.email,
 				"username": $scope.username,
-				"password": $scope.password,
+                "password": hex_md5($scope.email + $scope.password),
                 "facebook":"false",
+                "passwordADM":pass,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -252,13 +307,13 @@ function crearUsuarioCtrl($scope,$http,$templateCache,$location,$window)
 			{
 				
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/main');	
+				$location.path('/crearUsuario');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/crearUsuario');
 			});
 		}
 	};
@@ -271,7 +326,7 @@ function editarCursoCtrl($scope,$http,$templateCache,$location,$window)
 {
     $scope.getCursos = function()
 	{	
-		var url = 'http://localhost:1212/courses';
+		var url = 'http://felialoismobile.herokuapp.com/courses';
 		var method = 'POST';
 
 		$http({
@@ -298,7 +353,7 @@ function editarCursoCtrl($scope,$http,$templateCache,$location,$window)
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/update/course';
+			var urlReg = 'http://felialoismobile.herokuapp.com/update/course';
             var selectedID= document.getElementById("slCurso").value;
             //alert(selectedID);
             
@@ -307,6 +362,7 @@ function editarCursoCtrl($scope,$http,$templateCache,$location,$window)
 				"nombre": $scope.nombre,
 				"creditos": $scope.creditos,
 				"escuela": $scope.escuela,
+                "password":pass,
 			};
 
 
@@ -322,13 +378,13 @@ function editarCursoCtrl($scope,$http,$templateCache,$location,$window)
 			success(function(response)
 			{
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/');	
+				$location.path('/editarCurso');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/editarCurso');
 			});
 		}
 	};
@@ -340,7 +396,7 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
 {
     $scope.getGrupos = function()
 	{	
-		var url = 'http://localhost:1212/groups';
+		var url = 'http://felialoismobile.herokuapp.com/groups';
 		var method = 'POST';
 
 		$http({
@@ -360,7 +416,7 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getGrupos();
     $scope.getCursos = function()
 	{	
-		var url = 'http://localhost:1212/courses';
+		var url = 'http://felialoismobile.herokuapp.com/courses';
 		var method = 'POST';
 
 		$http({
@@ -382,7 +438,7 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
     
     $scope.getProfesores = function()
 	{	
-		var url = 'http://localhost:1212/professors';
+		var url = 'http://felialoismobile.herokuapp.com/professors';
 		var method = 'POST';
 
 		$http({
@@ -410,7 +466,7 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/update/group';
+			var urlReg = 'http://felialoismobile.herokuapp.com/update/group';
             var selectedPRF= document.getElementById("slProfe").value;
             var selectedID= document.getElementById("slGrupo").value;
             var selectedNUM= document.getElementById("slNum").value;
@@ -420,6 +476,7 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
                 "numero":selectedNUM,
                 "profesor":selectedPRF,
 				"sede": $scope.sede,
+                "password":pass,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -434,13 +491,13 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
 			success(function(response)
 			{
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/');	
+				$location.path('/editarCurso');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/editarCurso');
 			});
 		}
 	};
@@ -451,7 +508,7 @@ function editarProfeCtrl($scope,$http,$templateCache,$location,$window)
 {
     $scope.getProfesores = function()
 	{	
-		var url = 'http://localhost:1212/professors';
+		var url = 'http://felialoismobile.herokuapp.com/professors';
 		var method = 'POST';
 
 		$http({
@@ -478,11 +535,12 @@ function editarProfeCtrl($scope,$http,$templateCache,$location,$window)
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/update/professor';
+			var urlReg = 'http://felialoismobile.herokuapp.com/update/professor';
             var selectedID= document.getElementById("slProfesor").value;
 			var formData = {
                 "nombre": selectedID,
 				"nuevo": $scope.apellidos+" "+$scope.nombre,
+                "password":pass,
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -497,13 +555,13 @@ function editarProfeCtrl($scope,$http,$templateCache,$location,$window)
 			success(function(response)
 			{
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/');	
+				$location.path('/editarProfe');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/editarProfe');
 			});
 		}
 	};
@@ -514,7 +572,7 @@ function editarUsuarioCtrl($scope,$http,$templateCache,$location,$window)
 {
     $scope.getUsuarios = function()
 	{	
-		var url = 'http://localhost:1212/users';
+		var url = 'http://felialoismobile.herokuapp.com/users';
 		var method = 'POST';
 
 		$http({
@@ -541,13 +599,14 @@ function editarUsuarioCtrl($scope,$http,$templateCache,$location,$window)
 		}
 		else{
 			var post = 'POST';
-			var urlReg = 'http://localhost:1212/update/user';
+			var urlReg = 'http://felialoismobile.herokuapp.com/update/user';
             var selectedID= document.getElementById("slUsuario").value;
 			var formData = {
                 "correo":selectedID,
 				"username": $scope.username,
 				"password": $scope.password,
                 "facebook":"false",
+                "passwordADM":pass,
 			};
 
 
@@ -563,13 +622,13 @@ function editarUsuarioCtrl($scope,$http,$templateCache,$location,$window)
 			success(function(response)
 			{
 				($window.mockWindow || $window).alert("EXITO");
-				$location.path('/main');	
+				$location.path('/editarUsuario');	
 			}).
 			error(function(response)
 			{	
 				$scope.codeStatus = response || "Request failed";
 				($window.mockWindow || $window).alert("ERROR");
-				$location.path('/');
+				$location.path('/editarUsuario');
 			});
 		}
 	};
@@ -580,7 +639,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
 {
     $scope.getUsuarios = function()
 	{	
-		var url = 'http://localhost:1212/users';
+		var url = 'http://felialoismobile.herokuapp.com/users';
 		var method = 'POST';
 
 		$http({
@@ -599,7 +658,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
 	}
      $scope.getGrupos = function()
 	{	
-		var url = 'http://localhost:1212/groups';
+		var url = 'http://felialoismobile.herokuapp.com/groups';
 		var method = 'POST';
 
 		$http({
@@ -618,7 +677,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
 	}  
     $scope.getCursos = function()
 	{	
-		var url = 'http://localhost:1212/courses';
+		var url = 'http://felialoismobile.herokuapp.com/courses';
 		var method = 'POST';
 
 		$http({
@@ -637,7 +696,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
 	}
     $scope.getProfesores = function()
 	{	
-		var url = 'http://localhost:1212/professors';
+		var url = 'http://felialoismobile.herokuapp.com/professors';
 		var method = 'POST';
 
 		$http({

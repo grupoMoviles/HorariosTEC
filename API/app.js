@@ -89,8 +89,74 @@ app.get('/',function(req,res){
 
 
 // FUNCIONES QUE CONECTAN CON LA BASE DE DATOS
+//inserta al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+insertGroup = function(req,res)
+{
+    var pass=req.param("password");
+    var course=req.param("curso");
+    var number=req.param("numero");    
+    
+    db.usuarios.find({"password":pass},function(err,usuario){
+		if(!(usuario.length>0)){
+			res.send(400);
+		}
+		else
+		{
+            db.grupos.find({"curso":course,"numero":number},function(err,grupo){
+                if(err || !grupo){
+                    res.send(400);
+                }
+                else
+                {
+                    db.usuarios.update(
+                             { "password": pass },
+                             { $addToSet: { "grupos": grupo  } }
+                           )
+                }    
+            });
+        }            
+	});
+};
+
+        
+//inserta al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+insertCourse = function(req,res)
+{
+    var pass=req.param("password");
+    var curso=req.param("codigo");
+    
+    
+    db.usuarios.find({"password":pass},function(err,usuario){
+		if(!(usuario.length>0)){
+			res.send(400);
+		}
+		else
+		{
+            db.cursos.find({"codigo":curso},function(err,curso){
+                if(err || !curso){
+                    res.send(400);
+                }
+                else
+                {
+                    db.usuarios.update(
+                             { "password": pass },
+                             { $addToSet: { "cursos": curso  }}
+                           )
+                }    
+            });
+                    
+		}
+	});
+};
+        
+        
 
 
+
+//hace el login del administrador
+//entrada passoword creado de la union del usuario con la contrase;a con md5
 loginAdmin = function(req,res)
 {
 	var pass= req.param("password");
@@ -103,9 +169,9 @@ loginAdmin = function(req,res)
 			res.json(usuario);
 		}
 	});
-}
+};
 
-
+//hace el login del usuario
 login = function(req,res)
 {
 	var pass= req.param("password");
@@ -118,7 +184,7 @@ login = function(req,res)
 			res.json(usuario);
 		}
 	});
-}
+};
 
 
 
@@ -153,7 +219,7 @@ findUser = function(req,res)
 			res.json(usuario);
 		}
 	});
-}
+};
 
 
 
@@ -723,6 +789,8 @@ updateGroup = function(req,res)
             
 };
 
+app.post('insert/group',insertGroup);
+app.post('/insert/course',insertCourse);
 app.post('/login/administrador',loginAdmin);
 app.post('/login/usuario',login);
 app.post('/update/user',updateUser);
@@ -733,16 +801,16 @@ app.post('/delete/professor',deleteProfessor);
 app.post('/delete/user',deleteUser);
 app.post('/delete/course',deleteCourse);
 app.post('/delete/group',deleteGroup);
-app.post('/professor',findProfessor);
-app.post('/professors',findAllProfessors);
-app.post('/group',findGroupByNumber); 
-app.post('/groups',findAllGroups);
-app.post('/groups/bycourse',findGroupsByCourse);
-app.post('/course',findCourse);
-app.post('/courses',findAllCourses);
-app.post('/courses/school',findCoursesBySchool);
-app.post('/user',findUser);
-app.post('/users',findAllUsers);
+app.get('/professor',findProfessor);
+app.get('/professors',findAllProfessors);
+app.get('/group',findGroupByNumber); 
+app.get('/groups',findAllGroups);
+app.get('/groups/bycourse',findGroupsByCourse);
+app.get('/course',findCourse);
+app.get('/courses',findAllCourses);
+app.get('/courses/school',findCoursesBySchool);
+app.get('/user',findUser);
+app.get('/users',findAllUsers);
 app.post('/add/user',addUser);
 app.post('/add/professor',addProfessor);
 app.post('/add/course',addCourse);

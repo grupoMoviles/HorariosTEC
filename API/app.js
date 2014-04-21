@@ -21,7 +21,7 @@ var allowCrossDomain = function(req,res,next)
 {
 	res.header("Access-Control-Allow-Origin","*");
 	res.header("Access-Control-Allow-Methods","GET,POST,PUT,DELETE,OPTIONS");
-	res.header("Access-Control-Allow-Headers","Content-Type,Authorization,X-Requested-With,Content-Length");
+	//res.header("Access-Control-Allow-Headers","Content-Type,Authorization,X-Requested-With,Content-Length");
 	
 	
 	if('OPTIONS'==req.method)
@@ -70,15 +70,6 @@ var mongoUri = process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
   'mongodb://heroku_app24183267:ifjr7siso432arcdghdjco14v0@ds053438.mongolab.com:53438/heroku_app24183267';
 
-/*
-mongo.Db.connect(mongoUri, function (err, db) {
-	var name = "nombre";
-	
-  db.collection('profesores', function(er, collection) {
-    collection.insert({"nombre":name,"cantidadCalificaciones":0,"calificacionTotal":0},function(err,saved){});		
-  });
-});*/
-
 // Inicia la aplicacion que contiene el API
 app.get('/',function(req,res){
 	res.send("API working on the GUIA DE HORARIOS mongo database.");	
@@ -89,35 +80,315 @@ app.get('/',function(req,res){
 
 
 // FUNCIONES QUE CONECTAN CON LA BASE DE DATOS
-//inserta al usuario el curso seleccionado
-//entradas: password del usuario, codigo del curso
-insertGroup = function(req,res)
+
+//obtiene los usuarios con cierto grupo
+//entradas usuario, curso y numero
+getUsersInGroup = function(req, res){
+    var curso=req.param("codigo");
+    var numero=req.param("numero");
+
+    db.usuarios.find({"grupos":[curso,numero]},function(err,usuario){
+        if(err || !usuario){
+            res.send(400);
+        }
+        else{
+            res.json(usuario);
+            }
+
+        });
+};
+
+
+//obtiene los usuarios con cierto grupo
+//entradas id facebook, curso y numero
+getUsersInGroupFacebook = function(req, res){
+    var curso=req.param("codigo");
+    var numero=req.param("numero");
+
+    db.usuarios.find({"grupos":[curso,numero]},function(err,usuario){
+        if(err || !usuario){
+            res.send(400);
+        }
+        else{
+            res.json(usuario);
+            }
+
+        });
+};
+
+//califica al un profesor
+//entradas: nombre del profesor y la calificacion
+rateProfessor = function(req,res)
 {
     var pass=req.param("password");
-    var course=req.param("curso");
-    var number=req.param("numero");    
+    var email=req.param("correo");
+    var nombre=req.param("nombre");
+    var ratingP=req.param("calificacion");    
+    var i,total,cant,rating;
     
-    db.usuarios.find({"password":pass},function(err,usuario){
+    db.usuarios.find({"password":pass, "correo":email},function(err,usuario){
+		if(!(usuario.length>0)){
+			res.json("pff");
+		}
+		else
+		{
+            db.profesores.find({ "nombre":nombre},function(err,profe){
+                if(err || !profe){
+                    res.send(400);    
+                }
+                else{
+                    for(i=0;i<profe.length;i++){
+                        rating=parseFloat(ratingP);
+                        total=parseFloat(profe[i].calificacionTotal);
+                        cant=parseFloat(profe[i].cantidadCalificaciones);
+                    }
+                    db.profesores.update({ "nombre":nombre },{ $set: { "calificacionTotal": total+rating,                 "cantidadCalificaciones":cant+1}},function(err,profeR){
+                        if(err || !profeR){
+                            res.send(400);
+                        }
+                        else{
+                            res.json(profeR);
+                        }
+                        
+                    }
+                               );
+                }
+            });
+        }            
+	});
+};
+
+//califica al un profesor
+//entradas: nombre del profesor y la calificacion
+rateProfessorFacebook = function(req,res)
+{
+    var pass=req.param("password");
+    var email=req.param("correo");
+    var nombre=req.param("nombre");
+    var ratingP=req.param("calificacion");    
+    var i,total,cant,rating;  
+    
+    db.usuarios.find({"password":pass, "correo":email},function(err,usuario){
 		if(!(usuario.length>0)){
 			res.send(400);
 		}
 		else
 		{
-            db.grupos.find({"curso":course,"numero":number},function(err,grupo){
-                if(err || !grupo){
-                    res.send(400);
+              db.profesores.find({ "nombre":nombre},function(err,profe){
+                if(err || !profe){
+                    res.send(400);    
                 }
-                else
-                {
-                    db.usuarios.update(
-                             { "password": pass },
-                             { $addToSet: { "grupos": grupo  } }
-                           )
-                }    
+                else{
+                    for(i=0;i<profe.length;i++){
+                        rating=parseFloat(ratingP);
+                        total=parseFloat(profe[i].calificacionTotal);
+                        cant=parseFloat(profe[i].cantidadCalificaciones);
+                    }
+                    db.profesores.update({ "nombre":nombre },{ $set: { "calificacionTotal": total+rating,                 "cantidadCalificaciones":cant+1}},function(err,profeR){
+                        if(err || !profeR){
+                            res.send(400);
+                        }
+                        else{
+                            res.json(profeR);
+                        }
+                        
+                    }
+                               );
+                }
             });
         }            
 	});
 };
+
+
+//retorna todos los cursos de un usuario
+getCoursesByUser= function(req, res){
+    var correo=req.param("correo");
+    var password=req.param("password");
+    var cursos;
+    var cursosFinal = []; 
+    var i, j, k;
+    
+    db.usuarios.find({"correo":correo,"password":password},function(err,usuario){
+        if(err || !usuario){
+            res.send(400);
+        }
+        else{
+
+            for (j=0;j<usuario.length;j++){
+                cursos=usuario[j].cursos;
+                db.cursos.find({"codigo":{$in: cursos}},function(err,curso){
+                        if(err || !curso){
+                            res.json("pff");
+                        }
+                        else{
+                            res.json(curso);
+                        }
+                               });
+
+            }
+
+        }
+    });
+}
+
+//retorna todos los cursos de un usuario con facebook
+getCoursesByUserFacebook= function(req, res){   
+    var faceID= req.param("facebookID");
+    
+        db.usuarios.find({"facebook":faceID},function(err,usuario){
+        if(err || !usuario){
+            res.send(400);
+        }
+        else{
+            var cursos;
+            var cursosFinal = []; 
+			var i, j;
+            for (j=0;j<usuario.length;j++){
+                cursos=usuario[j].cursos;
+                db.cursos.find({"codigo":{$in: cursos}},function(err,curso){
+                        if(err || !curso){
+                            res.json("pff");
+                        }
+                        else{
+                            res.json(curso);
+                        }
+                               });
+
+            }
+            
+        }
+    });
+}
+
+//obtiene todos los grupos de un usuario
+getGroupsByUser = function(req, res){
+    var correo=req.param("correo");
+    var password=req.param("password");
+    var grupos, i, j, k,l;
+    var codigos=[];
+    var numeros=[];
+    var gruposFinal = []; 
+    
+    db.usuarios.find({"correo":correo,"password":password},function(err,usuario){
+        if(err || !usuario){
+            res.send(400);
+        }
+        else{
+            
+            for (j=0;j<usuario.length;j++){
+                grupos=usuario[j].grupos;
+                for(i=0;i<grupos.length;i++){
+                    codigos.push(grupos[i][0]);
+                    numeros.push(grupos[i][1]);
+                }
+                
+                db.grupos.find({"curso":{$in: codigos},"numero":{$in: numeros}},function(err,grupo){
+                        if(err || !grupo){
+                            res.send(400);
+                        }
+                        else{
+                            for(k=0;k<grupo.length;k++){
+                                for(l=0;l<grupos.length;l++){
+                                    if(grupo[k].curso==codigos[l] && grupo[k].numero==numeros[k]){
+                                        gruposFinal.push(grupo[k]);
+                                    }
+                                }
+                            }
+                            res.json(gruposFinal);
+                            
+                        }
+                    });    
+            }
+            
+
+                }
+            });
+            
+};
+
+//obtiene todos los grupos de un usuario
+getGroupsByUserFacebook = function(req, res){
+    var faceID= req.param("facebookID");
+    var grupos, i, j, k,l;
+    var codigos=[];
+    var numeros=[];
+    var gruposFinal = [];
+    
+    db.usuarios.find({"facebook":faceID},function(err,usuario){
+        if(err || !usuario){
+            res.send(400);
+        }
+        else{
+            
+            for (j=0;j<usuario.length;j++){
+                grupos=usuario[j].grupos;
+                for(i=0;i<grupos.length;i++){
+                    codigos.push(grupos[i][0]);
+                    numeros.push(grupos[i][1]);
+                }
+                
+                db.grupos.find({"curso":{$in: codigos},"numero":{$in: numeros}},function(err,grupo){
+                        if(err || !grupo){
+                            res.send(400);
+                        }
+                        else{
+                            for(k=0;k<grupo.length;k++){
+                                for(l=0;l<grupos.length;l++){
+                                    if(grupo[k].curso==codigos[l] && grupo[k].numero==numeros[k]){
+                                        gruposFinal.push(grupo[k]);
+                                    }
+                                }
+                            }
+                            res.json(gruposFinal);
+                            
+                        }
+                    });    
+            }
+            
+
+                }
+            });
+}
+
+
+
+//agregar id de facebook
+//entradas, usuario, password, id de facebook
+insertFacebook = function(req, res){
+    var correo=req.param("correo");
+    var password=req.param("password");
+    var faceID= req.param("facebookID");
+    
+    db.usuarios.update({"correo":correo,"password":password},{$set:{"facebook":faceID}},function(err,usuario){
+        if(err || !usuario){
+            res.send(400);
+        }
+        else{
+            res.send(usuario);
+        }
+    });
+}
+
+//inserta al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+insertGroup = function(req,res)
+{
+    var pass=req.param("password");
+    var email=req.param("correo");
+    var course=req.param("curso");
+    var number=req.param("numero");    
+    
+    db.usuarios.update({ "correo":email,"password": pass },{$addToSet: { "grupos": [course,number]  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+};
+
 
         
 //inserta al usuario el curso seleccionado
@@ -125,34 +396,141 @@ insertGroup = function(req,res)
 insertCourse = function(req,res)
 {
     var pass=req.param("password");
-    var curso=req.param("codigo");
+    var curso=req.param("codigo");   
+    var email=req.param("correo");
     
     
-    db.usuarios.find({"password":pass},function(err,usuario){
-		if(!(usuario.length>0)){
-			res.send(400);
-		}
-		else
-		{
-            db.cursos.find({"codigo":curso},function(err,curso){
-                if(err || !curso){
+    db.usuarios.update({ "correo":email,"password": pass },{$addToSet: { "cursos":curso  }},function(err,usuario){
+                if(err || !usuario){
                     res.send(400);
+            }
+                else{
+                    res.json(usuario);
                 }
-                else
-                {
-                    db.usuarios.update(
-                             { "password": pass },
-                             { $addToSet: { "cursos": curso  }}
-                           )
-                }    
             });
-                    
-		}
-	});
-};
-        
-        
 
+};
+
+//INSERTS CON FACEBOOK
+        
+//inserta al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+insertGroupFacebook = function(req,res)
+{
+    var face=req.param("facebookID");
+    var course=req.param("curso");
+    var number=req.param("numero");    
+    
+    db.usuarios.update({ "facebook":face},{$addToSet: { "grupos":[course,number]  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+};
+
+        
+//inserta al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+insertCourseFacebook = function(req,res)
+{
+    var face=req.param("facebookID");
+    var curso=req.param("codigo");   
+    
+    
+    db.usuarios.update({ "facebook":face },{$addToSet: { "cursos":curso  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+};
+     
+
+//BORRAR GRUPO Y CURSO
+
+//borra  al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+deleteGroupUser = function(req,res)
+{
+    var pass=req.param("password");
+    var email=req.param("correo");
+    var course=req.param("curso");
+    var number=req.param("numero");    
+    
+    db.usuarios.update({ "correo":email,"password": pass },{$pull: { "grupos":[course,number]  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+};
+     
+//borra al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+deleteCourseUser = function(req,res)
+{
+    var pass=req.param("password");
+    var curso=req.param("codigo");   
+    var email=req.param("correo");
+    
+    
+    db.usuarios.update({ "correo":email,"password": pass },{$pull: { "cursos":curso  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+
+};
+
+//borra al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+deleteGroupFacebook = function(req,res)
+{
+    var face=req.param("facebookID");
+    var course=req.param("curso");
+    var number=req.param("numero");    
+    
+    db.usuarios.update({ "facebook":face},{$pull: { "grupos":[course,number]  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+};
+
+        
+//borra al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+deleteCourseFacebook = function(req,res)
+{
+    var face=req.param("facebookID");
+    var curso=req.param("codigo");   
+    
+    
+    db.usuarios.update({ "facebook":face },{$pull: { "cursos":curso  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+};
+
+
+//LOGIN
 
 
 //hace el login del administrador
@@ -175,7 +553,8 @@ loginAdmin = function(req,res)
 login = function(req,res)
 {
 	var pass= req.param("password");
-	db.usuarios.find({"password":pass},function(err,usuario){
+    var email=req.param("correo");
+	db.usuarios.find({"password":pass, "correo":email},function(err,usuario){
 		if(err || !usuario){
 			res.send(400);
 		}
@@ -185,9 +564,30 @@ login = function(req,res)
 		}
 	});
 };
+    
+//hace el login del usuario con el id de faceboook
+/*Q solo reciba el Facebookid y que si ese usuario no existe todavía entonces que lo cree y que si ya existe entonces no lo crea! Y q siempre me devuelve una colección usuario! Si el usuario ya existe me devuelve los datos de ese usuario y si no existe entonces me devuelve un usuario con cursos y grupos vacíos*/
+loginFacebook = function(req,res)
+{
+	var face= req.param("facebookID");
+	db.usuarios.find({"facebook":face},function(err,usuario){
+		if(!(usuario.length>0)){
+			     db.usuarios.save({"facebook":face,"grupos":[],"cursos":[]},function(err,saved){
+                                    if(err || !saved)
+                                        res.send(400);
+                                    else
+                                        res.json(saved);
+                                });
+		}
+		else
+		{
+			res.json(usuario);
+		}
+	});
+};
 
 
-
+//GETS
 
 // Devolver todos los usuarios del sistema.
 // Entradas: Ninguna.
@@ -367,7 +767,7 @@ findGroupByNumber = function(req,res)
 
 
 
-
+//ADDS
 
 
 
@@ -517,18 +917,10 @@ addAdmin = function(req,res,next){
 // Salidas: JSON del usuario creado.
 addUser = function(req,res,next){
 
-	var username = req.param("username");
 	var pass = req.param("password");
 	var email = req.param("correo");
 	var face = req.param("facebook");
-    var passADM= req.param("passwordADM");
 	
-    db.administradores.find({"password":passADM},function(err,usuario){
-		if(!(usuario.length > 0)){
-			res.send(400);
-		}
-		else
-		{
 			db.usuarios.find({"correo":email},function(err,users){
                 if(users.length > 0)
                 {
@@ -536,26 +928,15 @@ addUser = function(req,res,next){
                 }
                 else
                 {
-                    db.usuarios.find({"username":username},
-                        function(err,users2){
-                            if(users2.length > 0)
-                            {
-                                res.send(400);
-                            }
-                            else{
-                                db.usuarios.save({"username":username,"correo":email,"password":pass,"facebook":face,"grupos":[],"cursos":[]},function(err,saved){
+                        db.usuarios.save({"correo":email,"password":pass,"facebook":face,"grupos":[],"cursos":[]},function(err,saved){
                                     if(err || !saved)
                                         res.send(400);
                                     else
                                         res.json(saved);
                                 });
-                            }
-                        });
 
                 }
             });
-		}
-	});
 	
             
 };
@@ -563,7 +944,7 @@ addUser = function(req,res,next){
 
 
 
-
+//DELETES
 
 
 
@@ -660,7 +1041,7 @@ deleteProfessor = function(req,res)
     
 };
 
-
+//UPDATES
 
 // Actualiza los datos de un usuario.
 // Entradas: El correo del usuario por actualizar y todos los datos que se actualizaran.
@@ -668,7 +1049,6 @@ deleteProfessor = function(req,res)
 updateUser = function(req,res)
 {
 	var email = req.param("correo");
-	var username = req.param("username");
 	var pass = req.param("password");
 	var face = req.param("facebook");
     
@@ -680,7 +1060,7 @@ updateUser = function(req,res)
 		}
 		else
 		{
-			db.usuarios.update({"correo":email},{$set:{"correo":email,"username":username,"password":pass,"facebook":face}},{multi:true},function(err,changed){
+			db.usuarios.update({"correo":email},{$set:{"correo":email,"password":pass,"facebook":face}},{multi:true},function(err,changed){
                 if(err || !changed){
                     res.send(400);
                 }
@@ -789,18 +1169,48 @@ updateGroup = function(req,res)
             
 };
 
-app.post('insert/group',insertGroup);
-app.post('/insert/course',insertCourse);
+//login
 app.post('/login/administrador',loginAdmin);
 app.post('/login/usuario',login);
+app.post('/login/usuario/facebook',loginFacebook);
+
+//insertar grupos y cursos
+app.post('/insert/group',insertGroup);
+app.post('/insert/course',insertCourse);
+app.post('/insert/group/facebook',insertGroupFacebook);
+app.post('/insert/course/facebook',insertCourseFacebook);
+
+//borrar grupos y cursos
+app.post('/delete/group/user',deleteGroupUser);
+app.post('/delete/course/user',deleteCourseUser);
+app.post('/delete/group/user/facebook',deleteGroupFacebook);
+app.post('/delete/course/user/facebook',deleteCourseFacebook);
+
+//udate
 app.post('/update/user',updateUser);
 app.post('/update/professor',updateProfessor);
 app.post('/update/group',updateGroup);
 app.post('/update/course',updateCourse);
+app.post('/insert/facebook',insertFacebook);
+app.post('/rate/professor',rateProfessor);
+app.post('/rate/professor/facebook',rateProfessorFacebook);
+
+
+//delete
 app.post('/delete/professor',deleteProfessor);
 app.post('/delete/user',deleteUser);
 app.post('/delete/course',deleteCourse);
 app.post('/delete/group',deleteGroup);
+
+//get
+app.post('/courses/user/facebook',getCoursesByUserFacebook);
+app.post('/courses/user',getCoursesByUser);
+app.post('/groups/user',getGroupsByUser);
+app.post('/groups/user/facebook',getGroupsByUserFacebook);
+
+app.post('/users/group',getUsersInGroup);
+app.post('/users/group/facebook',getUsersInGroupFacebook);
+
 app.get('/professor',findProfessor);
 app.get('/professors',findAllProfessors);
 app.get('/group',findGroupByNumber); 
@@ -811,6 +1221,8 @@ app.get('/courses',findAllCourses);
 app.get('/courses/school',findCoursesBySchool);
 app.get('/user',findUser);
 app.get('/users',findAllUsers);
+
+//add
 app.post('/add/user',addUser);
 app.post('/add/professor',addProfessor);
 app.post('/add/course',addCourse);

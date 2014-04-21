@@ -162,13 +162,12 @@ rateProfessor = function(req,res)
 //entradas: nombre del profesor y la calificacion
 rateProfessorFacebook = function(req,res)
 {
-    var pass=req.param("password");
-    var email=req.param("correo");
+    var face=req.param("facebookID");
     var nombre=req.param("nombre");
     var ratingP=req.param("calificacion");    
     var i,total,cant,rating;  
     
-    db.usuarios.find({"password":pass, "correo":email},function(err,usuario){
+    db.usuarios.find({"facebook":face},function(err,usuario){
 		if(!(usuario.length>0)){
 			res.send(400);
 		}
@@ -428,7 +427,25 @@ deleteGroupUser = function(req,res)
     var course=req.param("curso");
     var number=req.param("numero");    
     
-    db.usuarios.update({ "correo":email,"password": pass },{$pull: { "grupos":[course,number]  }},function(err,usuario){
+    db.usuarios.update({ "correo":email,"password": pass },{$pull: { "grupos":{"codigo":course,"numero":number}  }},function(err,usuario){
+                if(err || !usuario){
+                    res.send(400);
+            }
+                else{
+                    res.json(usuario);
+                }
+            });
+};
+
+//borra al usuario el curso seleccionado
+//entradas: password del usuario, codigo del curso
+deleteGroupFacebook = function(req,res)
+{
+    var face=req.param("facebookID");
+    var course=req.param("curso");
+    var number=req.param("numero");    
+    
+    db.usuarios.update({ "facebook":face},{$pull: { "grupos":{"codigo":course,"numero":number}   }},function(err,usuario){
                 if(err || !usuario){
                     res.send(400);
             }
@@ -458,23 +475,7 @@ deleteCourseUser = function(req,res)
 
 };
 
-//borra al usuario el curso seleccionado
-//entradas: password del usuario, codigo del curso
-deleteGroupFacebook = function(req,res)
-{
-    var face=req.param("facebookID");
-    var course=req.param("curso");
-    var number=req.param("numero");    
-    
-    db.usuarios.update({ "facebook":face},{$pull: { "grupos":[course,number]  }},function(err,usuario){
-                if(err || !usuario){
-                    res.send(400);
-            }
-                else{
-                    res.json(usuario);
-                }
-            });
-};
+
 
         
 //borra al usuario el curso seleccionado
@@ -1181,7 +1182,7 @@ app.get('/professor',findProfessor);
 app.get('/professors',findAllProfessors);
 app.post('/group',findGroupByNumber); 
 app.post('/groups',findAllGroups);
-app.post('/groups/bycourse',findGroupsByCourse);
+app.get('/groups/bycourse',findGroupsByCourse);
 app.get('/course',findCourse);
 app.get('/courses',findAllCourses);
 app.get('/courses/school',findCoursesBySchool);

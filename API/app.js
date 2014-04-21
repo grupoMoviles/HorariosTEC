@@ -87,7 +87,7 @@ getUsersInGroup = function(req, res){
     var curso=req.param("codigo");
     var numero=req.param("numero");
 
-    db.usuarios.find({"grupos":[curso,numero]},function(err,usuario){
+    db.usuarios.find({"grupos":{"codigo":curso,"numero":numero}},function(err,usuario){
         if(err || !usuario){
             res.send(400);
         }
@@ -105,7 +105,7 @@ getUsersInGroupFacebook = function(req, res){
     var curso=req.param("codigo");
     var numero=req.param("numero");
 
-    db.usuarios.find({"grupos":[curso,numero]},function(err,usuario){
+    db.usuarios.find({"grupos":{"codigo":curso,"numero":numero}},function(err,usuario){
         if(err || !usuario){
             res.send(400);
         }

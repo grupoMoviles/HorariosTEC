@@ -35,7 +35,7 @@ app.config(['$httpProvider',function($httpProvider){
 
 function loginCtrl($scope,$http,$templateCache,$location,$window)
 {
-    
+
 	$scope.registro = function()
 	{
         var passT = hex_md5($scope.username + $scope.password);
@@ -48,6 +48,9 @@ function loginCtrl($scope,$http,$templateCache,$location,$window)
 			var post = 'POST';
 			var urlReg = 'http://felialoismobile.herokuapp.com/login/administrador';
 			var formData = {
+                //"correo":$scope.username,
+                //"password":$scope.password,
+                
                 "password": passT,
 			};
 
@@ -67,6 +70,7 @@ function loginCtrl($scope,$http,$templateCache,$location,$window)
 			{
 				pass = $scope.usuarios[0].password;
                 ($window.mockWindow || $window).alert("Conectado con exito");
+                //($window.mockWindow || $window).alert($scope.usuarios[0].password);
                 
 				$location.path('/crearCurso');
 			}
@@ -180,7 +184,7 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getCursos = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/courses';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -201,7 +205,7 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getProfesores = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/professors';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -228,6 +232,7 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
     
     $scope.registro = function()
 	{
+        var curso=document.getElementById("slCursos").value;
         
         
 		if($scope.numero == null || $scope.aula== null)
@@ -239,8 +244,17 @@ function crearGrupoCtrl($scope,$http,$templateCache,$location,$window)
 			var urlReg = 'http://felialoismobile.herokuapp.com/addplayer';
 			var formData = {
 				"numero": $scope.numero,
-				"aula": $scope.aula,
+				"sede": $scope.aula,                
                 "password":pass,
+                
+                /*
+                var sede = req.param("sede");
+	var number = req.param("numero");
+	var course = req.param("curso");
+	var schedule = req.param("horario");
+	var professor = req.param("profesor");
+    var pass= req.param("password");
+                */
 			};
 
 			var jdata = JSON.stringify(formData);
@@ -288,8 +302,7 @@ function crearUsuarioCtrl($scope,$http,$templateCache,$location,$window)
 			var urlReg = 'http://felialoismobile.herokuapp.com/add/user';
 			var formData = {
                 "correo":$scope.email,
-				"username": $scope.username,
-                "password": hex_md5($scope.email + $scope.password),
+                "password": $scope.password,
                 "facebook":"false",
                 "passwordADM":pass,
 			};
@@ -327,7 +340,7 @@ function editarCursoCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getCursos = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/courses';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -417,7 +430,7 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getCursos = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/courses';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -439,7 +452,7 @@ function editarGrupoCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getProfesores = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/professors';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -509,7 +522,7 @@ function editarProfeCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getProfesores = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/professors';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -573,7 +586,7 @@ function editarUsuarioCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getUsuarios = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/users';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -640,7 +653,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getUsuarios = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/users';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -678,7 +691,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getCursos = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/courses';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -697,7 +710,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
     $scope.getProfesores = function()
 	{	
 		var url = 'http://felialoismobile.herokuapp.com/professors';
-		var method = 'POST';
+		var method = 'GET';
 
 		$http({
 			method: method, 
@@ -735,7 +748,7 @@ function borrarCtrl($scope,$http,$templateCache,$location,$window)
 		
 	};
     $scope.register = function(){
-        
+                
         
     }
 }

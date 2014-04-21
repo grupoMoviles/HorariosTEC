@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ver1.guiahorarios.progra1.CourseOrganization.UserCourse_Info" >
+    
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>
+<!-- From: file:/C:/Users/sanchosv/AndroidStudioProjects/Moviles/GuiaHorarios/progra1/src/main/res/menu/user_course__info.xml -->

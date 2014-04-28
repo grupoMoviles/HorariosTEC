@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:id="@+id/FI_Name"
+        android:layout_weight="0.41"
+        android:layout_alignBottom="@+id/FI_Profile"
+        android:layout_toLeftOf="@+id/FI_Profile"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <com.facebook.widget.ProfilePictureView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/FI_Profile"
+        android:layout_gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        </com.facebook.widget.ProfilePictureView>
+
+
+</RelativeLayout><!-- From: file:/Users/felipealfaro/Dropbox/TEC/ProyectosInteliJ/GuiaHorarios/progra1/src/main/res/layout/friends_item.xml -->

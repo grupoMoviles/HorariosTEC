@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="19.1.0" >
+        <source path="/Users/felipealfaro/Dropbox/TEC/ProyectosInteliJ/GuiaHorarios/progra1/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/assets" />
+    </dataSet>
+    <dataSet config="unspecified" >
+        <source path="/Users/felipealfaro/Dropbox/TEC/ProyectosInteliJ/GuiaHorarios/progra1/build/exploded-aar/GuiaHorarios.libraries/facebook/unspecified/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/felipealfaro/Dropbox/TEC/ProyectosInteliJ/GuiaHorarios/progra1/src/main/assets" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/felipealfaro/Dropbox/TEC/ProyectosInteliJ/GuiaHorarios/progra1/src/debug/assets" />
+    </dataSet>
+
+</merger>

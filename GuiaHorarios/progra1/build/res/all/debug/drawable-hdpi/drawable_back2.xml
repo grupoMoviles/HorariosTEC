@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle"
+    >
+
+    <solid android:color="#89D0FF"></solid>
+    <stroke android:width="0.1dip" android:color="#217772"></stroke>
+
+</shape><!-- From: file:/Users/felipealfaro/Dropbox/TEC/ProyectosInteliJ/GuiaHorarios/progra1/src/main/res/drawable-hdpi/drawable_back2.xml -->

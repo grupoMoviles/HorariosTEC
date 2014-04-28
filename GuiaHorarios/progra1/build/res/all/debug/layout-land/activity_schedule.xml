@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:id="@+id/container"
+    android:layout_height="fill_parent"
+    android:stretchColumns="*"
+    tools:context="com.example.app.ScheduleActivity"
+    tools:ignore="MergeRootFrame"
+    android:weightSum="1">
+
+</FrameLayout><!-- From: file:/Users/felipealfaro/Dropbox/TEC/ProyectosInteliJ/GuiaHorarios/progra1/src/main/res/layout-land/activity_schedule.xml -->

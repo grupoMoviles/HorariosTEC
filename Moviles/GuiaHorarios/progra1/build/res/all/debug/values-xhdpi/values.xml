@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <!-- From: file:/C:/Users/sanchosv/AndroidStudioProjects/Moviles/GuiaHorarios/progra1/build/exploded-bundles/GuiaHorariosLibrariesFacebookUnspecified.aar/res/values-xhdpi/values.xml -->
-    <eat-comment />
-
-    <dimen name="com_facebook_picker_divider_width">2px</dimen>
-
-</resources>
